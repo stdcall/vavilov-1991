@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0"
+       class="in-text" default-locale="en-GB">
+  <info>
+    <title>Mathematical references with initials</title>
+    <id>urn:vavilov:mathematical-references</id>
+    <updated>2026-09-30T00:00:00+00:00</updated>
+  </info>
+  <macro name="names">
+    <names variable="author">
+      <name initialize-with=". " delimiter=", " and="text"/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="year">
+    <date variable="issued"><date-part name="year"/></date>
+  </macro>
+  <macro name="title">
+    <choose>
+      <if type="book thesis report" match="any">
+        <text variable="title" font-style="italic"/>
+      </if>
+      <else><text variable="title"/></else>
+    </choose>
+  </macro>
+  <macro name="publication">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper" match="any">
+        <group>
+        <group delimiter=" ">
+          <text variable="container-title" font-style="italic"/>
+          <group>
+            <text variable="volume" font-weight="bold"/>
+            <text variable="issue" prefix="(" suffix=")"/>
+          </group>
+          <text macro="year" prefix="(" suffix=")"/>
+        </group>
+          <text variable="page" prefix=", "/>
+        </group>
+      </if>
+      <else>
+        <group delimiter=", ">
+          <group delimiter=" ">
+            <text variable="container-title" prefix="In " font-style="italic"/>
+            <names variable="editor" prefix="(eds. "><name
+              initialize-with=". " delimiter=", " and="text" suffix=")"/></names>
+          </group>
+          <text variable="genre"/>
+          <text variable="edition" suffix=" ed."/>
+          <group delimiter=" ">
+            <text variable="collection-title"/>
+            <text variable="collection-number"/>
+            <text variable="volume"/>
+          </group>
+          <text variable="publisher"/>
+          <text variable="publisher-place"/>
+          <text macro="year"/>
+          <text variable="page" prefix="pp. "/>
+          <text variable="number-of-pages" suffix=" pp."/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if variable="DOI"><text variable="DOI" prefix="https://doi.org/"/></if>
+      <else><text variable="URL"/></else>
+    </choose>
+  </macro>
+  <citation>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+      <text variable="locator" prefix=", "/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <group delimiter=". " suffix=".">
+        <text macro="names"/>
+        <text macro="title"/>
+        <text macro="publication"/>
+        <text variable="note"/>
+      </group>
+      <text macro="access" prefix=" " suffix="."/>
+    </layout>
+  </bibliography>
+</style>

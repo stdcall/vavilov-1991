@@ -1,0 +1,99 @@
+[
+  {
+    "file": "checks/lean/Vavilov1991/Jacobson.lean",
+    "declarations": [
+      "Vavilov1991.jacobson_inverse_right",
+      "Vavilov1991.jacobson_inverse_left",
+      "Vavilov1991.rectangular_jacobson_right",
+      "Vavilov1991.rectangular_jacobson_left"
+    ],
+    "book": "§10.2: the Jacobson inverse identity, including rectangular matrices of arbitrary finite dimensions over an associative unital ring. The left and right inverse hypotheses are checked separately.",
+    "limitations": "The inverse identities only; no statement about ideals or membership in an elementary subgroup.",
+    "passages": [
+      "passage:jacobson-inverse"
+    ]
+  },
+  {
+    "file": "checks/lean/Vavilov1991/Suslin.lean",
+    "declarations": [
+      "Vavilov1991.suslin_component",
+      "Vavilov1991.koszulRelation_syzygy",
+      "Vavilov1991.suslin_decomposition",
+      "Vavilov1991.suslin_triangular_decomposition"
+    ],
+    "book": "§10.4: for a unimodular row v over any commutative ring and every finite index type, each u with v·u=0 is a sum of Koszul relations. Both the ordered-pair formula and, for a finite linearly ordered index type, the exact triangular sum printed in the text are formalized; neither division by 2 nor a domain hypothesis is used.",
+    "limitations": "The explicit syzygy decomposition only; the subsequent elementary-group normality theorem is not formalized.",
+    "passages": [
+      "eq:suslin-syzygy-decomposition",
+      "passage:suslin-syzygies"
+    ]
+  },
+  {
+    "file": "checks/lean/Vavilov1991/Transvections.lean",
+    "declarations": [
+      "Vavilov1991.rank_one_square_zero",
+      "Vavilov1991.square_zero_unipotent_inverse"
+    ],
+    "book": "§10.1: the square of the outer product uv is zero when v·u=0, over any commutative ring and any finite index type. A square-zero element a in an arbitrary associative unital ring satisfies (1+a)(1−a)=(1−a)(1+a)=1.",
+    "limitations": "Square-zero and inverse identities only; neither the determinant assertion nor elementary membership is formalized.",
+    "passages": [
+      "passage:linear-transvection-inverse"
+    ]
+  },
+  {
+    "file": "checks/lean/Vavilov1991/Whitehead.lean",
+    "declarations": [
+      "Vavilov1991.whitehead_relative_parameter",
+      "Vavilov1991.whitehead_four_factors",
+      "Vavilov1991.whitehead_five_factors"
+    ],
+    "book": "§10.2: the four-factor Whitehead–Vaserstein block identity and its five-factor relative form over an arbitrary associative unital ring and arbitrary finite rectangular dimensions. Both use a specified two-sided inverse Z of 1+XY; the identity X−ZX=ZXYX uses only the left inverse hypothesis.",
+    "limitations": "The matrix factorizations and relative-parameter identity only. The assertions that the resulting entries lie in a two-sided ideal and that the factors lie in the relative elementary group remain the explicit argument in the text.",
+    "passages": [
+      "eq:whitehead-four-factorisation",
+      "eq:whitehead-relative-factorisation"
+    ]
+  },
+  {
+    "file": "checks/lean/Vavilov1991/ZeroComponent.lean",
+    "declarations": [
+      "Vavilov1991.zero_coordinate_commutator",
+      "Vavilov1991.zero_component_factorization",
+      "Vavilov1991.transvection_entries_in_ideal"
+    ],
+    "book": "§10.2: over an arbitrary associative unital ring, the zero-coordinate commutator and its factorization give 1+uξv when v·u=0 and v_j=0. Entries u_iξv_k lie in a two-sided ideal containing ξ. The coefficient order is explicit and ξ need not be central.",
+    "limitations": "The matrix identities and membership of the entries in the ideal only. Membership of the factors in an elementary group and the row counterpart remain the argument in the text.",
+    "passages": [
+      "eq:zero-component-commutator"
+    ]
+  },
+  {
+    "file": "checks/lean/Vavilov1991/RingDouble.lean",
+    "declarations": [
+      "Vavilov1991.mem_ringDouble_iff",
+      "Vavilov1991.double_square_commutes",
+      "Vavilov1991.double_projections_split",
+      "Vavilov1991.double_lift_projections",
+      "Vavilov1991.double_lift_unique",
+      "Vavilov1991.double_first_kernel",
+      "Vavilov1991.double_second_kernel",
+      "Vavilov1991.double_semidirect_product"
+    ],
+    "book": "§5.3: the double of a commutative ring along an ideal is the ring of pairs with equal images in the quotient. Its square commutes and has the universal lifting property, its two projections split along the diagonal, and their kernels identify with the ideal. The multiplication in semidirect coordinates is checked over an arbitrary associative unital ring.",
+    "limitations": "The ring square, projections, kernels and coordinate multiplication only. Preservation of the square by a Chevalley-group functor and the split exact sequence for relative elementary groups are not formalized.",
+    "passages": [
+      "ss:relativization"
+    ]
+  },
+  {
+    "file": "checks/lean/Vavilov1991/G2.lean",
+    "declarations": [
+      "Vavilov1991.g2_short_root_preserves_quadratic"
+    ],
+    "book": "§6.5: the complete quadratic norm is preserved by the displayed short-root coordinate transformation over every commutative ring, including characteristics two and three.",
+    "limitations": "The quadratic polynomial identity only. Preservation of the Dickson tensor, octonion multiplication, and the additive one-parameter law are checked separately in Sage; the group-scheme identification is not formalized in Lean.",
+    "passages": [
+      "eq:g2-short-root-action"
+    ]
+  }
+]

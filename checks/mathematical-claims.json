@@ -1,0 +1,920 @@
+[
+  {
+    "file": "content/11-chevalley-groups.typ",
+    "target": "ss:chevalley-algebras",
+    "claim": "Affine group schemes are represented by commutative Hopf algebras; coproduct, counit and antipode induce multiplication, identity and inverse on points.",
+    "hypotheses": "Commutative base ring; affine group scheme.",
+    "verification": "Milne2022 Definition 3.3 and adjacent Hopf algebra construction; Conrad2014 Definition 3.1.1 for reductive scheme scope.",
+    "coverage": "verified",
+    "limitations": "This verifies the added definition, not construction or classification of every Chevalley scheme."
+  },
+  {
+    "file": "content/11-chevalley-groups.typ",
+    "target": "ss:weyl-modules",
+    "claim": "A finite-dimensional complex semisimple Lie algebra module has an admissible integral lattice; admissible lattices decompose into weight components.",
+    "hypotheses": "Finite-dimensional module over a complex semisimple Lie algebra, fixed Chevalley basis.",
+    "verification": "Ree1964 Definition 1.5 and Theorem 1.6; additionally read Kostant1966 Corollary 1 to Theorem 1 and its proof.",
+    "coverage": "verified",
+    "limitations": "No Lean formalization of representation theory; lattice dependence and basis choices are retained."
+  },
+  {
+    "file": "content/11-chevalley-groups.typ",
+    "target": "ss:weyl-modules",
+    "claim": "Root divided powers generate an integral form of the universal enveloping algebra; ordered negative divided powers, Cartan binomials and positive divided powers form an integral basis.",
+    "hypotheses": "Complex semisimple Lie algebra with integral Chevalley basis.",
+    "verification": "full Kostant1966 Groups Over Z, especially Theorem 1, proof §§2.5–2.6 and Corollary 1.",
+    "coverage": "verified",
+    "limitations": "The integral enveloping-algebra theorem does not itself prove the modern group-scheme equivalence."
+  },
+  {
+    "file": "content/12-elementary-calculations.typ",
+    "target": "ss:important-elements-subgroups",
+    "claim": "The universal (simply connected) Chevalley group over a field has the stated Steinberg presentation after imposing multiplicativity of h.",
+    "hypotheses": "Indecomposable root system; arbitrary field; relations A,B,C for rank at least two; B replaced by B′ for rank one.",
+    "verification": "Steinberg2016 Chapter 6, Theorem 8(b), its setup and rank-one relation B′; earlier universal/simply-connected convention read.",
+    "coverage": "verified",
+    "limitations": "Original Steinberg1962 full text was not located; no original theorem number inferred. Reducible root systems use componentwise extension, not literal Theorem 8(b)."
+  },
+  {
+    "file": "content/14-stable-general-calculations.typ",
+    "target": "ss:stable-calculations",
+    "claim": "Columns of invertible matrices over a commutative ring are unimodular.",
+    "hypotheses": "Square invertible matrix over a commutative unital ring.",
+    "verification": "the corresponding row of the inverse pairs with the column to give 1.",
+    "coverage": "verified",
+    "limitations": "Does not imply every unimodular column completes to an invertible matrix."
+  },
+  {
+    "file": "content/14-stable-general-calculations.typ",
+    "target": "ss:equations-columns",
+    "claim": "Characteristic-free highest-weight orbit equations impose necessary constraints on columns over arbitrary rings.",
+    "hypotheses": "Integral representation and polynomial identities vanishing on the group scheme; field orbit sufficiency requires algebraic closure and a nonzero point.",
+    "verification": "Lichtenstein1982 is cited; its full characteristic and scheme-level scope has no independently verified locator in this register.",
+    "coverage": "unresolved",
+    "limitations": "The phrase characteristic free alone does not prove scheme-level identities or sufficiency over arbitrary rings. No blanket source-verified status assigned."
+  },
+  {
+    "file": "content/15-relative-groups.typ",
+    "target": "ss:congruence-subgroups",
+    "claim": "Reduction has kernel the principal congruence subgroup and yields an exact sequence ending in its image; full congruence subgroup is the inverse image of the quotient group centre.",
+    "hypotheses": "Commutative unital ring R, ideal I, fixed affine group scheme G.",
+    "verification": "homomorphism/kernel definitions and group first isomorphism argument.",
+    "coverage": "verified",
+    "limitations": "Reduction onto all G(R/I) is not asserted; central quotients and relative K1 require separately stated normality."
+  },
+  {
+    "file": "content/15-relative-groups.typ",
+    "target": "ss:relativization",
+    "claim": "The ring double is the pullback R×_(R/I)R; its projections split by the diagonal and have kernels (0,I),(I,0).",
+    "hypotheses": "Commutative unital ring R and ideal I.",
+    "verification": "Lean Vavilov1991.mem_ringDouble_iff, double_square_commutes, double_projections_split, double_lift_projections, double_lift_unique, double_first_kernel, double_second_kernel and double_semidirect_product in checks/lean/Vavilov1991/RingDouble.lean. Componentwise ring operations give the compatible-pair universal map; semidirect coordinates give multiplication (ab,ad+cb+cd).",
+    "coverage": "verified",
+    "limitations": "The first seven declarations concern the commutative ring double; the coordinate multiplication is valid over an associative unital ring. Neither preservation by a Chevalley functor nor elementary-group exactness is formalized."
+  },
+  {
+    "file": "content/15-relative-groups.typ",
+    "target": "ss:relativization",
+    "claim": "For the split projection of the double, the elementary kernel is its relative elementary subgroup; projection to the other factor identifies it with E(R,I). The elementary reduction square commutes, but its bottom row need not be exact.",
+    "hypotheses": "Fixed Chevalley root group functor over commutative rings; ideal I; relative elementary subgroup defined by normal closure.",
+    "verification": "Stepanov2014 §1.12 splitting principle; checked elementary argument: write split generator xα(a,b)=xα(a,a)xα(0,b−a), so kernel is the normal closure of the second factors. Under π2 these give level-I generators and conjugates; inverse identification follows their embedding in the kernel group of the represented pullback.",
+    "coverage": "verified",
+    "limitations": "Representability gives G(D)=G(R)×_(G(R/I))G(R), not a general claim that elementary functors preserve arbitrary pullbacks. Normality transfer assumes absolute normality for every ring in question."
+  },
+  {
+    "file": "content/15-relative-groups.typ",
+    "target": "ss:unipotent-root-elements",
+    "claim": "Relative elementary groups are generated by conjugated root generators; long-root generation requires a separate G2 argument.",
+    "hypotheses": "Reduced irreducible root system of rank at least two; commutative ring and ideal.",
+    "verification": "The displayed non-G₂ rank-two Chevalley factorization has been checked algebraically. The original author’s assertion alone does not verify the remaining G₂ case.",
+    "coverage": "partial",
+    "limitations": "Own-school source is not counted as independent source verification. Uniform G2 long-root generation is not certified by this selection; displayed argument explicitly only gives it when 2I=I."
+  },
+  {
+    "file": "content/13-minimal-modules.typ",
+    "target": "ss:basic-representations",
+    "claim": "Basic representations are minuscule representations or the short-root representation; their nonzero weight spaces have multiplicity one.",
+    "hypotheses": "Nontrivial irreducible finite-dimensional representation of a complex simple Lie algebra; Weyl group transitive on nonzero weights.",
+    "verification": "Multiplicity-one deduction checked: Weyl invariance of weight multiplicities transports the one-dimensional highest-weight space. Complete classification and the asserted reflection criterion were not independently source-verified in this selection.",
+    "coverage": "partial",
+    "limitations": "No certification of the full classification table or zero-weight multiplicity formula from this argument alone."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-a",
+    "claim": "Gsc(A_l)=SL_(l+1); Gad=PGL_(l+1); E consists of elementary transvections; root e_i-e_j adds xi v_j to v_i.",
+    "hypotheses": "Commutative R; l≥1.",
+    "verification": "Matrix-unit multiplication verifies the root action. Ree1957 and Hee1984 are cited for the scheme identifications; an independently checked proof locator is not recorded.",
+    "coverage": "partial",
+    "limitations": "Matrix action verified; integral scheme identification requires an independently read locator."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-a",
+    "claim": "SL_n→PGL_n need not be surjective on R-points; its target is not generally SL_n modulo scalar matrices.",
+    "hypotheses": "General commutative R.",
+    "verification": "Counterexample over R=real numbers, n=2: projective class diag(-1,1) cannot be scaled to determinant one, since scaling multiplies determinant by a square.",
+    "coverage": "verified",
+    "limitations": "Counterexample proves warning, not full cohomological description."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-a",
+    "claim": "SL_n/E_n defines unstable SK1 as a quotient group for n≥3; rank-one cosets may not form a group.",
+    "hypotheses": "n≥3 and commutative R; exception n=2.",
+    "verification": "Suslin–Taddei elementary normality supplies the quotient-group assertion for n≥3; the matrix generators agree by definition.",
+    "coverage": "partial",
+    "limitations": "Full group normality is source-based, not formalized in Lean."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-a",
+    "claim": "Natural A_l weight diagram is a chain with labels alpha_i=e_i-e_(i+1).",
+    "hypotheses": "Displayed compressed diagram, l=8–12 test instances.",
+    "verification": "checks/sage/classical_diagrams.py compares actual vertex and complete induced edge literals with independent Sage root data.",
+    "coverage": "verified",
+    "limitations": "Finite displayed instances; root description gives the symbolic extension, no arbitrary-rank formalization."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-b",
+    "claim": "Split odd quadratic form has maximal Witt index l; Spin and SO give simply connected/adjoint type B_l models.",
+    "hypotheses": "Quadratic form x0²+sum xi x_-i; displayed bilinear equations assume 2 invertible.",
+    "verification": "The displayed hyperbolic pairs exhibit the Witt index. The integral Spin/SO identification has no independently checked proof locator in this register.",
+    "coverage": "partial",
+    "limitations": "Odd orthogonal group scheme in characteristic two requires its correct integral definition; determinant/polar-form equations below have 2-unit scope."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-b",
+    "claim": "Odd orthogonal Gram, inverse-entry identities, determinant condition, and necessary column norm zero or one.",
+    "hypotheses": "2 invertible; indices 1,…,l,0,-l,…,-1.",
+    "verification": "a^-1=F^-1 a^t F proves entry equations; quadratic norm of a column follows a^tFa=F. checks/sage/classical_forms.py confirms ranks2–5 exactly.",
+    "coverage": "verified",
+    "limitations": "Column norm is necessary, not asserted sufficient to extend a vector to an orthogonal matrix."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-b",
+    "claim": "Polar form is symmetric, nondegenerate and identifies V with its dual; O equals its isometry group.",
+    "hypotheses": "2 invertible in odd dimension; even hyperbolic Gram invertible over any R.",
+    "verification": "F determinant is ±2 in odd rank; even skew-diagonal determinant is ±1; inverse-Gram algebra gives the dual isomorphism.",
+    "coverage": "verified",
+    "limitations": "Cannot drop 2-unit assumption in odd dimension."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-b",
+    "claim": "Displayed long/short root matrices preserve Q, have determinant 1, form additive root subgroups and have the stated coordinate actions.",
+    "hypotheses": "Commutative R; long i≠±j; short i≠0.",
+    "verification": "checks/sage/classical_forms.py verifies the integral polynomial identities at ranks 2–5. Direct multiplication in the affected two or three coordinates proves additivity and the stated actions.",
+    "coverage": "verified",
+    "limitations": "Finite Sage instances and the embedded coordinate argument do not identify the entire group scheme."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-b",
+    "claim": "Spin(K)=Epin(K); EO(K) is kernel of spinor norm and outside small dimensions equals Omega; KO differs from spinorial K1.",
+    "hypotheses": "Field K; split quadratic space; 2-unit convention in surrounding matrix exposition; low-dimension exceptions unspecified.",
+    "verification": "Bass1974, Bak1981 and Stein1978 are cited in the text; exact field hypotheses and low-dimensional exceptions are not verified here.",
+    "coverage": "unresolved",
+    "limitations": "The unspecified small-dimensional exceptions prevent certification of the complete prose assertion."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-b",
+    "claim": "B_l natural weights form labelled chain, including zero; root coordinate additions agree with matrices.",
+    "hypotheses": "Displayed compressed instances.",
+    "verification": "checks/sage/classical_diagrams.py independently verifies vertices/edges; checks/sage/classical_forms.py verifies displayed action matrices.",
+    "coverage": "verified",
+    "limitations": "No group-scheme identification from graph checks."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-c",
+    "claim": "Alternating form is perfect, Sp is its matrix stabilizer, Gsc type C_l and Gad=PSp.",
+    "hypotheses": "Commutative R, l≥1.",
+    "verification": "The alternating Gram matrix has determinant one and inverse −F; inverse-entry identities follow by multiplication. Integral Chevalley identification needs a separate proof locator.",
+    "coverage": "partial",
+    "limitations": "Linear algebra verified; scheme classification not certified by finite matrices."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-c",
+    "claim": "C_l roots, long/short elementary matrices and coordinate actions are as displayed; root subgroups additive.",
+    "hypotheses": "Opposite indices for long roots; i≠±j short roots.",
+    "verification": "checks/sage/classical_forms.py ZZ polynomial preservation/determinant/inverse checks ranks2–5; direct matrix-unit multiplication proves additivity for all embedded patterns.",
+    "coverage": "verified",
+    "limitations": "Sage does not prove elementary-subgroup normality."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-c",
+    "claim": "KSp_1=Sp_(2l)/Ep_(2l) is a quotient group.",
+    "hypotheses": "Requires l≥2 over arbitrary commutative R.",
+    "verification": "For l≥2, symplectic elementary normality follows from the Suslin–Taddei theorem cited in the text. For l=1 the model is SL₂/E₂, where normality cannot be assumed.",
+    "coverage": "partial",
+    "limitations": "The rank restriction is explicit; the full normality theorem is source-based."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-c",
+    "claim": "Natural C_l diagram is labelled chain, terminal root 2e_l.",
+    "hypotheses": "Displayed instances.",
+    "verification": "checks/sage/classical_diagrams.py independent complete vertex/edge comparison.",
+    "coverage": "verified",
+    "limitations": "Finite displayed instances, not all-rank formal theorem."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-d",
+    "claim": "Hyperbolic Q has maximal Witt index; Spin/SO/PSO are corresponding forms; intermediate lattices count one for odd l, three for even l.",
+    "hypotheses": "D_l irreducible l≥4; SO matrix description 2 invertible.",
+    "verification": "The intermediate-lattice count follows from P/Q≅Z/4 for odd l and (Z/2)² for even l. Conrad2014, Definition C.2.10 and Theorem C.2.11, supply the integral connected-orthogonal definition.",
+    "coverage": "partial",
+    "limitations": "The complete root-datum identification and low-rank coincidences are not certified by the lattice count alone."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-d",
+    "claim": "Even orthogonal inverse entries, isotropic columns, long root matrices and coordinate actions.",
+    "hypotheses": "2 invertible for equivalence of determinant/polar-form description with SO; root matrices themselves integral.",
+    "verification": "a^-1=f a^t f; column Q=0 via diagonal Gram entry; checks/sage/classical_forms.py preservation and determinant checks ranks2–5.",
+    "coverage": "verified",
+    "limitations": "The inverse/column equations alone do not suffice in characteristic two."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-d",
+    "claim": "D_l diagram has two incomparable middle weights and specified root labels.",
+    "hypotheses": "Displayed compressed instances.",
+    "verification": "checks/sage/classical_diagrams.py independent complete induced edge check.",
+    "coverage": "verified",
+    "limitations": "Claim concerns actual diagram, no assertion about every possible coordinate ordering."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-g2",
+    "claim": "Alternation of the five given monomials defines the Dickson three-form; corrected Q has negative x0².",
+    "hypotheses": "Commutative R; alternating form defined integrally.",
+    "verification": "checks/sage/g2_forms.py verifies all 343 basis triples against split Zorn multiplication and diagnoses the printed quadratic-form error by exact tangent-space calculations.",
+    "coverage": "verified",
+    "limitations": "Rational tangent diagnostic alone does not prove group-scheme identification."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-g2",
+    "claim": "Split Zorn multiplication has unit, norm ab+u·v, trace a+b, and multiplicative norm.",
+    "hypotheses": "Every commutative R; displayed signs fixed.",
+    "verification": "checks/sage/g2_forms.py exact integral polynomial norm-composition identity; unit/trace by direct substitution. Conrad2015 ExampleB.2 supplies split model.",
+    "coverage": "verified",
+    "limitations": "Composition identity is algebraic; classification of automorphisms uses separate theorem."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-g2",
+    "claim": "Aut(split octonion algebra) is split group scheme G2 over Z, hence equality on R-points.",
+    "hypotheses": "Every commutative R.",
+    "verification": "Conrad2015, Theorem B.14 and Lemma B.13, pp. 58–59; Asok2019, Theorem 2.2.1. These primary-source statements supply the group-scheme identification.",
+    "coverage": "verified",
+    "limitations": "Source theorem, not Lean/Sage scheme proof."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-g2",
+    "claim": "When two is invertible, Q and F determine octonion multiplication and Isom(Q,F)=G2.",
+    "hypotheses": "2 invertible; trace-zero complement V.",
+    "verification": "Trace decomposition R1⊕V; XY=−B(X,Y)/2·1+X×Y. Perfect B uniquely recovers X×Y from F; isometries extend fixing1. Converse norm/trace preservation from octonion automorphisms. checks/sage/g2_forms.py checks coefficient identities.",
+    "coverage": "verified",
+    "limitations": "Uses the established octonion automorphism theorem; no claim in characteristic two for the seven-dimensional tensor description."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "eq:g2-short-root-action",
+    "claim": "The displayed signed short-root operator preserves Q and the Dickson form, extends to an integral Zorn automorphism, and has the additive parameter law.",
+    "hypotheses": "The stated Zorn basis; any commutative unital ring, including characteristics two and three.",
+    "verification": "Lean Vavilov1991.g2_short_root_preserves_quadratic; Sage g2_forms.py complete norm polynomial, 343 tensor triples, 64 octonion products and additive parameter law over Z[t,s].",
+    "coverage": "verified",
+    "limitations": "This verifies the explicit one-parameter operator, not construction or classification of the full G2 group scheme."
+  },
+  {
+    "file": "content/21-classical-groups.typ",
+    "target": "ss:type-g2",
+    "claim": "Listed natural A/B/C/G2 modules have chain diagrams; dual modules retain the chain shape.",
+    "hypotheses": "Must specify equivalence up to duality and low-rank coincidences, and nontrivial irreducible highest-weight modules.",
+    "verification": "checks/sage/classical_diagrams.py confirms listed shapes; duality sends every weight to its negative, preserving root-difference edge labels.",
+    "coverage": "verified",
+    "limitations": "Global classification of all irreducible chain weight diagrams is no longer asserted."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-module",
+    "claim": "The E₆ minuscule weight orbit has 27 weights of multiplicity one, dual highest weight ω₆, and diagram W(E₆)/W(D₅).",
+    "hypotheses": "Highest weight omega1; Bourbaki numbering.",
+    "verification": "checks/sage/weight_diagrams.py and checks/sage/exceptional_weights.py generate the full Weyl orbit and all 36 labelled edges; the roots fixing ω₁ form D₅.",
+    "coverage": "verified",
+    "limitations": "Independent finite root data, not proof of module freeness over every ring."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-module",
+    "claim": "Every E6 root action has six disjoint linear coordinate pairs; example alpha1+alpha3+alpha4 matches highlighted diagram.",
+    "hypotheses": "27-dimensional minuscule module; root parameter arbitrary, signs from fixed integral basis.",
+    "verification": "checks/sage/e6_representation.py all 72 root matrices preserve cubic; checks/sage/exceptional_weights.py verifies six pairs and marked graph action. weight_diagrams.py counts six coordinate pairs for every root and eight paths but six pairs for alpha1+alpha3+alpha4.",
+    "coverage": "verified",
+    "limitations": "Endpoint-pair counts do not prescribe signs along arbitrary paths. Distinct paths with the same endpoints do not give additional coordinate actions."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-cubic",
+    "claim": "F=detx+dety+detz−tr(xyz) defines split E6 cubic, and its polynomial isometry scheme is Gsc(E6).",
+    "hypotheses": "Mat3(Z)^3 and arbitrary base change; polynomial rather than pointwise equality on finite rings.",
+    "verification": "Conrad2015 formula6.6 and TheoremC.2, LemmasC.3–C.4/proof read; Vavilov1996 §8p93 verifies minus convention.",
+    "coverage": "verified",
+    "limitations": "Comparison of weight-basis cubic with Mat3 model not explicitly constructed here; see separate weight-form bridge entry."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-cubic",
+    "claim": "Nondegenerate homogeneous form degree≥3 has finite linear isometry group in characteristic zero.",
+    "hypotheses": "Meaning of nondegenerate (smooth projective hypersurface) and degree/dimension exceptions must be specified.",
+    "verification": "Orlik1978 is cited, but the exact nondegeneracy definition and theorem exceptions have not been verified.",
+    "coverage": "unresolved",
+    "limitations": "The broad finiteness assertion is unresolved without its precise hypotheses."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-cubic",
+    "claim": "Given semisimple group has tensor stabilizer; irreducible tensor-indecomposable groups maximal subject to exceptions.",
+    "hypotheses": "Fixed algebraically closed field; characteristic and explicitly listed exceptions.",
+    "verification": "Dynkin, Seitz and Testerman are cited; the complete exception list and applicable theorem hypotheses have not been verified.",
+    "coverage": "unresolved",
+    "limitations": "Irreducibility alone does not establish maximality of a tensor stabilizer."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-jordan",
+    "claim": "Split eight-dimensional composition algebra is unique with zero divisors; canonical involution/trace; Hermitian model has Jordan product.",
+    "hypotheses": "Field characteristic≠2,3; gamma_i units; split octonions.",
+    "verification": "Conrad2015, Appendix B, supplies the split composition model. The Jordan identity, uniqueness and twisted Hermitian construction need a separately checked source theorem.",
+    "coverage": "partial",
+    "limitations": "Jordan identity/uniqueness and gamma-twisted Hermitian algebra not tested or independently proved here."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-jordan",
+    "claim": "Hermitian gamma-dependent entries, determinant cubic, quadratic trace form and Freudenthal cross product normalization.",
+    "hypotheses": "Field characteristic≠2,3; gamma_i units; f(x,x,x)=detx.",
+    "verification": "The Hermitian entry conditions follow by comparing entries in g⁻¹(a*)ᵗg=a. The determinant, trace and cross-product normalization require a verified Faulkner1977 locator.",
+    "coverage": "partial",
+    "limitations": "No complete polynomial verification of the nonassociative determinant or Jordan/cross-product relation is recorded."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-jordan",
+    "claim": "The 27-dimensional Jordan diagram splits into three scalar components and three eight-dimensional components.",
+    "hypotheses": "Restricted D4 graph with edges1,6 removed.",
+    "verification": "checks/sage/exceptional_weights.py verifies the three singleton and three eight-node restricted Weyl orbits.",
+    "coverage": "verified",
+    "limitations": "Checks weight-space partition, not full Jordan multiplication."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-dickson",
+    "claim": "A5+A1 decomposition V=U⊕Λ²U*⊕U, equivalently U⊕Λ⁴U⊕U; natural pairing determines cubic.",
+    "hypotheses": "U natural rank 6, chosen determinant trivialization.",
+    "verification": "checks/sage/exceptional_weights.py verifies component sizes 6, 15 and 6. The perfect exterior pairing gives Λ⁴U≅Λ²U* after choosing a determinant trivialization; the complete equivariant cubic construction is not verified.",
+    "coverage": "partial",
+    "limitations": "Dimension/component agreement does not certify equivariant tensor/cubic construction."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "Schlafli root-difference graph has diameter 2, degree 16, ten non-neighbours; D5 vector/half-spin subsets.",
+    "hypotheses": "27 E6 minuscule weights.",
+    "verification": "checks/sage/exceptional_weights.py verifies all 27 weights, graph degree 16, diameter two, common-neighbour counts 10 and 8, and restricted D₅ orbits of sizes 10 and 16.",
+    "coverage": "verified",
+    "limitations": "Distance-transitivity not directly asserted by the script; separate entry."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "The Schläfli graph is distance-transitive; a nonadjacent pair has a unique third weight completing a cubic triple.",
+    "hypotheses": "Full E6 Weyl action on minuscule orbit.",
+    "verification": "checks/sage/exceptional_weights.py verifies the cubic incidences. Transitivity of the restricted W(D₅) orbits of sizes 16 and 10 gives distance-transitivity.",
+    "coverage": "verified",
+    "limitations": "Incidence symmetry does not by itself prove invariance of the coefficient signs."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "There are 45 unordered cubic triples and 270 ordered triples; the proposed ordered-triple stabilizer has type D₄.",
+    "hypotheses": "Triple consists pairwise nonadjacent distinct weights.",
+    "verification": "checks/sage/exceptional_weights.py verifies the 45 triples; six orderings give 270. The complete faithful stabilizer identification is not independently verified.",
+    "coverage": "partial",
+    "limitations": "Counts alone do not certify the full Weyl-group stabilizer."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "45 cubic triples identify with tritangent planes of cubic surface.",
+    "hypotheses": "Classical complex/algebraically closed smooth cubic-surface identification.",
+    "verification": "Coxeter1963 is cited; a complete geometric correspondence between root incidences and cubic-surface lines has not been verified.",
+    "coverage": "unresolved",
+    "limitations": "Root incidence checks alone do not verify algebraic-geometric line correspondence."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "The signed 45-term weight cubic is invariant under the integral root operators; its invariant line is unique over Q.",
+    "hypotheses": "Specified integral Chevalley basis; distinguished sign+1.",
+    "verification": "checks/sage/e6_representation.py verifies all 72 root actions over Z[t], generator relations and the one-dimensional invariant kernel over Q. checks/sage/exceptional_weights.py checks torus exponents and cubic support.",
+    "coverage": "verified",
+    "limitations": "Rational invariant uniqueness alone does not identify an integral stabilizer. The separate checks/sage/e6_norm_model.py certificate supplies the integral norm-model isometry."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "th:e6-cubic-isometry",
+    "claim": "The signed weight-basis cubic is asserted to have split simply connected E₆ as its stabilizer after every base change.",
+    "hypotheses": "Polynomial equality after arbitrary base change.",
+    "verification": "checks/sage/e6_norm_model.py verifies the complete identity N(Su)=f(u) over Z and det(S)=1 for the signed-permutation matrix S. Its integral inverse conjugates the two polynomial isometry functors after every commutative base change. Conrad2015, formula (6.6) and Theorem C.2, with Lemmas C.3–C.4, identifies the norm-model stabilizer.",
+    "coverage": "verified",
+    "limitations": "The integral change of basis and polynomial identity are computationally certified; smoothness, connectedness and the group-scheme identification are supplied by the independently read primary-source theorem, not proved by Sage."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "Root torus multiplies six weights by epsilon, six by epsilon^-1; weight torus exponents1,−1,0 with multiplicities1,10,16; cubic is relative invariant.",
+    "hypotheses": "Chosen torus/weight-element normalization.",
+    "verification": "checks/sage/exceptional_weights.py verifies the torus exponents, their multiplicities and the corresponding exponent sum on each cubic triple.",
+    "coverage": "verified",
+    "limitations": "Scheme identification of extended group requires separate source theorem."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-weight-cubic",
+    "claim": "Complete polarization has diagonal 6F; the integral quadratic and cubic refinements retain the information lost by division by two or six.",
+    "hypotheses": "Square-free cubic support; every commutative ring.",
+    "verification": "checks/sage/exceptional_weights.py verifies the universal monomial identities; summing the 45 square-free monomials proves the displayed polarization and cross-product relations.",
+    "coverage": "verified",
+    "limitations": "Division by two or six is not permitted in small characteristic."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-identification",
+    "claim": "The integral Mat₃ norm stabilizer is the split E₆ group scheme.",
+    "hypotheses": "Integral polynomial stabilizer.",
+    "verification": "Conrad2015, Lemmas C.3–C.4 and the proof of Theorem C.2, establish flatness, connectedness and the required root structure.",
+    "coverage": "verified",
+    "limitations": "A primary-source scheme proof, not a numerical tangent-space test or a Lean theorem."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-identification",
+    "claim": "White, grey and black vectors have the stated geometric rank/orbit classification; the black E₆ orbit depends on its nonzero norm.",
+    "hypotheses": "Algebraically closed field of characteristic different from two and three; the extended group is used for a single black orbit.",
+    "verification": "Mars1966 is cited, but a complete verified orbit-theorem locator is not recorded.",
+    "coverage": "unresolved",
+    "limitations": "The restriction to algebraically closed fields does not by itself verify the classification."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-identification",
+    "claim": "A cubic isometry has a white first column; the proposed reduction yields blocks of sizes 1, 16 and 10.",
+    "hypotheses": "Algebraically closed characteristic≠2,3; geometric orbit theorem required.",
+    "verification": "The highest-weight vector has zero quadratic adjoint; cubic isometries preserve that locus. The verified cubic incidences yield the hyperbolic pairing on the ten-weight component.",
+    "coverage": "partial",
+    "limitations": "Transitivity and simultaneous row/column reduction remain unverified; the orthogonal block alone does not identify the full stabilizer."
+  },
+  {
+    "file": "content/22-cubic-form.typ",
+    "target": "ss:e6-identification",
+    "claim": "The extended E₆ model is described by norm similarities; polarization is equivalent when six is invertible.",
+    "hypotheses": "Unit multiplier; polynomial identities after arbitrary base change.",
+    "verification": "The polarization equivalence follows by coefficient comparison. The full extended-group identification needs a precise independently checked similarity-scheme theorem.",
+    "coverage": "partial",
+    "limitations": "The E₆ isometry theorem alone does not identify the full similarity scheme."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-f4",
+    "claim": "The split F₄ group is described as the automorphism group of the split Albert algebra and an identity stabilizer inside E₆.",
+    "hypotheses": "The field and characteristic hypotheses of the Jordan model must be specified.",
+    "verification": "Chevalley1950 and Jacobson are cited; a complete applicable identification theorem is not verified here.",
+    "coverage": "unresolved",
+    "limitations": "No universal-ring or characteristic-two scheme identification is certified."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-f4",
+    "claim": "The restricted F₄ module has 24 nonzero weights and a three-dimensional zero-weight space, including the fixed identity line.",
+    "hypotheses": "Restriction of the E₆ module; omitted zero-space action is outside the diagram coverage.",
+    "verification": "checks/sage/exceptional_weights.py verifies the minimal character with 24 nonzero weights and zero multiplicity two, plus the fixed line, and all visible labelled edges.",
+    "coverage": "verified",
+    "limitations": "The action on the zero-weight space is not fully drawn or checked by the diagram comparison."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-f4",
+    "claim": "The stated F₄ root matrices have the specified off-diagonal entry counts and ranks.",
+    "hypotheses": "Characteristic zero; nonzero parameter; the chosen basis.",
+    "verification": "No complete signed F₄ generator matrix calculation or verified primary-source locator is recorded.",
+    "coverage": "unresolved",
+    "limitations": "Weight multiplicities do not certify basis-dependent matrix-entry counts or ranks."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e7",
+    "claim": "The E₇ minuscule module has 56 weights, a perfect alternating form and root operators of rank 12; its E₆ grading has sizes 1, 27, 27 and 1.",
+    "hypotheses": "Split integral Chevalley model; a nonzero parameter for nonzero-entry counts.",
+    "verification": "checks/sage/e7_invariant.py checks the independent Sage weight orbit, all 126 root operators, square-zero and symplectic identities, and the generator relations. checks/sage/exceptional_weights.py verifies the diagram.",
+    "coverage": "partial",
+    "limitations": "The weight grading is not a semisimple branching theorem in every characteristic."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e7",
+    "claim": "The alternating-matrix model has dimension 56 and the stated Pfaffian/trace quartic is invariant under the E₇ root operators.",
+    "hypotheses": "Characteristic zero for the displayed fractional formulas; six invertible for polarization equivalence.",
+    "verification": "checks/sage/e7_invariant.py verifies the full 56-variable quartic over Q[t], coefficient ratio (1,1,−1/4,1/16), symplectic preservation and generator relations.",
+    "coverage": "partial",
+    "limitations": "Root invariance does not prove that the entire stabilizer equals E₇; no integral extension is inferred from the fractional formula."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e7",
+    "claim": "An integral nonsymmetric four-linear form and alternating form define simply connected E₇; the extended scheme stabilizes the ideal of 133 quadrics.",
+    "hypotheses": "Every commutative ring by base change from Z.",
+    "verification": "VavilovLuzgarev2016, Theorems 1–2, constructions §§3–4 and proof §9, pp. 19–20 of the English author manuscript.",
+    "coverage": "partial",
+    "limitations": "The source is a later work of the original author and a coauthor. The complete integral form, fibre and scheme arguments have not been independently reproduced. The rational quartic root-invariance check does not supply them."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e7",
+    "claim": "The Brown and exterior-power descriptions have dimensions 1+27+27+1 and 7+21+21+7, with the stated characteristic-two qualifications.",
+    "hypotheses": "Fields satisfying the hypotheses of the particular tensor construction.",
+    "verification": "Dimensions follow from the exterior powers and the Jordan rank 27. Complete Brown/Aschbacher tensor identities and the coefficient-two calculation are not verified.",
+    "coverage": "partial",
+    "limitations": "No explicit ternary-product implementation or verified characteristic-two theorem locator is recorded."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e8",
+    "claim": "The E₈ adjoint weight grading has dimension 248, with E₇ pieces of sizes 1, 56, 133, 56, 1 and 1.",
+    "hypotheses": "Integral weight grading; semisimplicity in every characteristic is not asserted.",
+    "verification": "checks/sage/exceptional_weights.py verifies the independent root sets and counts: 57 positive roots outside E₇, 27 outside E₆, and 36 positive E₆ roots; the negative and Cartan parts give dimensions 248 and 133.",
+    "coverage": "partial",
+    "limitations": "Root counts verify the grading. The separate assertion that the adjoint module is the smallest E₈ representation requires a highest-weight classification."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e8",
+    "claim": "The three displayed adjoint fragments have the correct vertices, labelled simple-root edges and exits.",
+    "hypotheses": "Displayed positive-root portions; omitted Cartan-action links are excluded.",
+    "verification": "checks/sage/exceptional_weights.py compares complete independent Sage root sets and edge lists and rejects duplicates.",
+    "coverage": "verified",
+    "limitations": "No complete adjoint-action matrix diagram is claimed."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e8",
+    "claim": "The normalized integral E₈ pairing is unimodular, the Killing form is 60B, and the displayed bracket-derived tensors are invariant.",
+    "hypotheses": "Integral Chevalley basis with opposite-root pairing one; arbitrary base change.",
+    "verification": "checks/sage/exceptional_weights.py verifies the 240 root contributions to the Killing trace and determinant one of the 248-dimensional Gram matrix. Invariance and bracket antisymmetry give the tensor identities.",
+    "coverage": "verified",
+    "limitations": "The script verifies Gram and trace data, not all bracket coefficients; the invariant Chevalley-pairing identities are algebraic inputs."
+  },
+  {
+    "file": "content/23-exceptional-groups.typ",
+    "target": "ss:type-e8",
+    "claim": "Single tensor stabilizers admit unwanted scalar symmetries; the pair (B,f) reconstructs the bracket, and the Killing form vanishes in characteristics two, three and five.",
+    "hypotheses": "Perfect B; scalar multiplier ζ with ζ³=1 or ζ⁴=1 for the respective tensor.",
+    "verification": "checks/sage/exceptional_weights.py verifies the scalar obstructions. Multilinearity supplies degrees three and four; Killing=60B explains the characteristics. Perfectness represents f(x,y,−) by a unique bracket vector.",
+    "coverage": "verified",
+    "limitations": "The common stabilizer is identified with B-preserving Lie-algebra automorphisms, not automatically with E₈ over every ring."
+  },
+  {
+    "file": "content/39-structure-theorems.typ",
+    "target": "th:standard-commutator-formula",
+    "claim": "Absolute and relative elementary normality and the standard commutator inclusions; equality under the stated small-residue-field exclusions.",
+    "hypotheses": "Commutative unital ring; irreducible root system of rank at least two. Equality excludes B2/G2 with an F2 residue field.",
+    "verification": "Taddei1985/Taddei1986 normality; Vaserstein1986b Theorem 3, full source read for the relative commutator assertions.",
+    "coverage": "verified",
+    "limitations": "No extension to rank one or to arbitrary noncommutative coefficient rings. Mixed two-ideal formula has additional hypotheses."
+  },
+  {
+    "file": "content/39-structure-theorems.typ",
+    "target": "th:standard-normal-structure",
+    "claim": "Elementary-normalised subgroups have a unique ideal sandwich.",
+    "hypotheses": "Rank at least two; 2 invertible for B/C/F4; for G2, 3 invertible and no F2 residue field; commutative unital ring.",
+    "verification": "Vaserstein1986b Theorems 3–4, full proof and hypotheses read.",
+    "coverage": "verified",
+    "limitations": "Not a Lean proof; without invertibility restrictions levels can depend on root length."
+  },
+  {
+    "file": "content/39-structure-theorems.typ",
+    "target": "passage:level-reduction",
+    "claim": "Root extraction in all quotient rings, together with the standard commutator formula, yields the ideal sandwich.",
+    "hypotheses": "The standard-normal-structure restrictions; relative normality; root-level generation and relative perfectness over every quotient.",
+    "verification": "Vaserstein1986b Theorems 3–4; explicit quotient argument in the text: the root and all elementary conjugates become central modulo F∩E, so relative perfectness forces their normal closure into F.",
+    "coverage": "verified",
+    "limitations": "Parabolic extraction is a separate theorem, not a consequence of a Levi decomposition. No arbitrary nonsplit-kernel intersection equality is used."
+  },
+  {
+    "file": "content/39-structure-theorems.typ",
+    "target": "ss:rank-one",
+    "claim": "Rank-one behaviour differs from higher-rank normality and classification.",
+    "hypotheses": "Rank-one groups and the particular rings indicated in the historical discussion.",
+    "verification": "Historical primary references cited in the section; no new universal rank-one theorem asserted.",
+    "coverage": "partial",
+    "limitations": "Examples are not a classification of all rank-one groups over all rings."
+  },
+  {
+    "file": "content/39-structure-theorems.typ",
+    "target": "ss:noncommutative-rings",
+    "claim": "Factoring by a two-sided ideal in the Jacobson radical preserves standard normal structure of GL(n,R).",
+    "hypotheses": "Associative unital ring; n≥3; J contained in the Jacobson radical.",
+    "verification": "Stepanov1999 §4 Theorem 4.6 and proof, Corollary 4.7, author preprint p9, full text and separate erratum read.",
+    "coverage": "verified",
+    "limitations": "Does not settle the exact class of rings or the separate conjecture about normal subgroups inside E(n,R)."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "passage:linear-transvection-inverse",
+    "claim": "Rank-one square-zero operators give invertible transvections with inverse obtained by negating the parameter.",
+    "hypotheses": "Finite free module over a commutative unital ring; vu=0. The square-zero inverse identity itself allows any associative unital ring.",
+    "verification": "Lean Vavilov1991.rank_one_square_zero and Vavilov1991.square_zero_unipotent_inverse.",
+    "coverage": "verified",
+    "limitations": "Determinant, root type and elementary membership are not formalized by these declarations."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "passage:jacobson-inverse",
+    "claim": "1+YX has inverse 1−YZX when Z is a two-sided inverse of 1+XY.",
+    "hypotheses": "Arbitrary finite rectangular dimensions over an associative unital ring; specified inverse Z.",
+    "verification": "Lean Vavilov1991.rectangular_jacobson_right and Vavilov1991.rectangular_jacobson_left; also jacobson_inverse_right/left.",
+    "coverage": "verified",
+    "limitations": "No assertion concerning ideals or elementary groups follows solely from the inverse calculation."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "eq:whitehead-four-factorisation",
+    "claim": "The four unipotent block factors equal diag(1+XY,1−YZX).",
+    "hypotheses": "Associative unital ring; finite rectangular blocks; Z two-sided inverse of 1+XY.",
+    "verification": "Lean Vavilov1991.whitehead_four_factors; checks/sage/whitehead.py.",
+    "coverage": "verified",
+    "limitations": "Sage alone covers only its selected 2×3/3×2 dimensions."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "eq:whitehead-relative-factorisation",
+    "claim": "The five-factor form lies in the relative elementary group when Y has entries in the ideal.",
+    "hypotheses": "Associative unital ring, two-sided ideal I, finite positive block sizes, entries of Y in I, Z inverse of 1+XY.",
+    "verification": "Lean Vavilov1991.whitehead_five_factors and whitehead_relative_parameter; textual factor-membership proof; Suslin1977 §1 Lemma 1.1, Quillen1995 p174 read.",
+    "coverage": "verified",
+    "limitations": "Lean does not formalize elementary-group membership. The original missing inverse was corrected."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "eq:zero-component-commutator",
+    "claim": "A rank-one transvection with one zero row or column coordinate is relative elementary.",
+    "hypotheses": "Associative unital ring and two-sided ideal; coefficient order as printed; vu=0 and vj=0, or the row counterpart.",
+    "verification": "Lean Vavilov1991.zero_coordinate_commutator, zero_component_factorization, transvection_entries_in_ideal; explicit normal-closure membership argument.",
+    "coverage": "verified",
+    "limitations": "The elementary group itself and the transposed counterpart are not formalized."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "ss:proofs-stability",
+    "claim": "Stable row reduction gives GL(n,R)=GL(n−1,R)E(n,R), hence relative elementary normality.",
+    "hypotheses": "Stable-rank condition n≥sr(R)+1; rows and right coefficients in the stated order; associative unital ring.",
+    "verification": "Bass1964/Bass1967 stable-range result; Vaserstein1981 Lemma 9 p458, full paper read; direct multiplication of the displayed row operations.",
+    "coverage": "partial",
+    "limitations": "Stable-row-reduction signs are not formalized in Lean. This route does not remove the stable-rank bound."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "eq:suslin-syzygy-decomposition",
+    "claim": "Every u orthogonal to a unimodular row v has the exact triangular Koszul decomposition displayed.",
+    "hypotheses": "Commutative unital ring; finite linearly ordered index set; vw=1 and vu=0.",
+    "verification": "Lean Vavilov1991.suslin_component, koszulRelation_syzygy, suslin_decomposition, suslin_triangular_decomposition.",
+    "coverage": "verified",
+    "limitations": "The subsequent elementary normality proof is an argument using the separate zero-component lemma, not this Lean theorem alone."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "ss:suslin-proof",
+    "claim": "The syzygy decomposition and zero-component lemma prove relative elementary normality.",
+    "hypotheses": "Commutative unital ring, n≥3, ideal I; conjugated rows unimodular.",
+    "verification": "Suslin1977 §1 and the explicit argument in the text; Lean-decomposed syzygies and zero-component identities as separate inputs.",
+    "coverage": "verified",
+    "limitations": "No full group-normality theorem has been formalized in Lean."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "eq:stepanov-linear-factors",
+    "claim": "Column-stabilising factors multiply to the desired elementary root element and their conjugates are relative elementary.",
+    "hypotheses": "Commutative unital ring, n≥3, invertible g, ξ in I; auxiliary distinct index3.",
+    "verification": "Direct inverse-matrix sums and multiplication; zero-component commutator lemma; unimodular centre has explicit left inverse f1 g−1.",
+    "coverage": "verified",
+    "limitations": "No inference from fixing a column alone: unimodularity is essential to obtain the zero row coordinate. This complete group argument is not formalized."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "ss:borewicz-vavilov-proof",
+    "claim": "A noncentral elementary-normalised linear subgroup has a noncentral element preserving a coordinate line.",
+    "hypotheses": "Commutative unital ring; n≥3; g noncentral; subgroup normalised by E.",
+    "verification": "Borevich1985 proof and independently checked rank-one commutators, antisymmetry and unit ideal of 2×2 minors of two rows of an invertible matrix.",
+    "coverage": "verified",
+    "limitations": "Does not by itself prove the parabolic extraction theorem. No Lean formalization of the minors argument."
+  },
+  {
+    "file": "content/40-proofs-linear.typ",
+    "target": "th:quillen-suslin-local-global",
+    "claim": "A polynomial matrix equal to identity at zero is elementary iff all maximal localisations are elementary.",
+    "hypotheses": "Commutative unital ring, n≥3, g(0)=1.",
+    "verification": "Suslin1976 local-global theorem; Stepanov2014 §§2.4–2.6, full dissertation read.",
+    "coverage": "verified",
+    "limitations": "Not a consequence of injectivity into a localisation; arbitrary elements may be zero divisors. No Lean implementation of patching."
+  },
+  {
+    "file": "content/41-proofs-orthogonal.typ",
+    "target": "ss:esd-transvections",
+    "claim": "ESD transformations and their conjugation preserve the orthogonal form.",
+    "hypotheses": "Commutative unital ring, 2 invertible, isotropic mutually orthogonal defining vectors; nondegenerate stated form.",
+    "verification": "Hahn1989b §§5.1C,5.2D,5.3D read; direct rank-two formula; checks/sage/orthogonal_transvections.py.",
+    "coverage": "verified",
+    "limitations": "The Sage rational model does not establish arbitrary-ring elementary membership."
+  },
+  {
+    "file": "content/41-proofs-orthogonal.typ",
+    "target": "eq:orthogonal-three-space",
+    "claim": "The three commuting root factors have the displayed six-dimensional matrix and fixed-column syzygies.",
+    "hypotheses": "Three mutually orthogonal isotropic directions; parameters as printed; common scalar permitted.",
+    "verification": "checks/sage/orthogonal_transvections.py and checks/sage/stabiliser_identities.py.",
+    "coverage": "verified",
+    "limitations": "No assertion that every product is a single ESD transvection. No elementary membership from a fixed vector alone."
+  },
+  {
+    "file": "content/41-proofs-orthogonal.typ",
+    "target": "passage:orthogonal-factor-product",
+    "claim": "The orthogonal column-stabilising factors multiply to T_(1,−2)(ξ).",
+    "hypotheses": "Split orthogonal model and invertible form-preserving g; commutative ring; ESD coordinate formula uses 2 invertible.",
+    "verification": "Displayed inverse-matrix contractions, commutativity of the three root groups; checks/sage/stabiliser_identities.py verifies fixed-column polynomial identities.",
+    "coverage": "verified",
+    "limitations": "Not a proof of elementary membership of their conjugates; this step is explicitly separated."
+  },
+  {
+    "file": "content/41-proofs-orthogonal.typ",
+    "target": "ss:orthogonal-normality",
+    "claim": "Split orthogonal elementary groups are absolutely and relatively normal.",
+    "hypotheses": "Commutative unital ring; irreducible B/D rank at least two; no stable-rank or invertibility-of-two requirement for the uniform theorem.",
+    "verification": "Taddei1985/Taddei1986; complete split-pullback proof at passage:relative-normality-pullback.",
+    "coverage": "verified",
+    "limitations": "A parabolic can have nontrivial Levi K1. No unsupported fixed-column⇒elementary implication is used."
+  },
+  {
+    "file": "content/41-proofs-orthogonal.typ",
+    "target": "ss:orthogonal-further",
+    "claim": "The isotropic elementary group is independent of a strictly proper parabolic and normal.",
+    "hypotheses": "After localisation at every maximal ideal, every relative irreducible component has rank at least two; strictly proper means meeting every nontrivial semisimple normal component properly.",
+    "verification": "PetrovStavrova2009 Theorem 1, full source read.",
+    "coverage": "verified",
+    "limitations": "A single split torus of rank two is insufficient. Form-ideal settings may require more than one ideal; no universal nonsplit normal-structure classification is inferred."
+  },
+  {
+    "file": "content/42-proofs-symplectic.typ",
+    "target": "eq:symplectic-transvections",
+    "claim": "The corrected tilde convention, long/short rank-one formulas, form preservation and conjugation.",
+    "hypotheses": "Commutative unital ring; alternating nondegenerate F; for short transformations (u,v)=0; division by two only where 2 is invertible.",
+    "verification": "Direct expansion using F transpose=−F and isotropy; checks/sage/stabiliser_identities.py and checks/sage/classical_forms.py.",
+    "coverage": "verified",
+    "limitations": "No claim of arbitrary-vector elementary membership."
+  },
+  {
+    "file": "content/42-proofs-symplectic.typ",
+    "target": "eq:symplectic-long-product",
+    "claim": "Long/short product equals T_(ηu+θv)(1) and the coordinate choice fixes a column.",
+    "hypotheses": "Orthogonal u,v; commutative ring; displayed rank-two Witt coordinates.",
+    "verification": "checks/sage/stabiliser_identities.py; direct vanishing of all cross terms.",
+    "coverage": "verified",
+    "limitations": "Summing squares does not reconstruct a prescribed root parameter; the text explicitly records this limitation."
+  },
+  {
+    "file": "content/42-proofs-symplectic.typ",
+    "target": "eq:symplectic-minor-syzygy",
+    "claim": "Signed minors solve the two fixed-column linear equations.",
+    "hypotheses": "Any commutative ring; any two columns; no division; common multiplier permitted.",
+    "verification": "checks/sage/stabiliser_identities.py; determinant expansion with repeated columns.",
+    "coverage": "verified",
+    "limitations": "They solve the associated linear factor, not all subsequent parabolic/elementary membership questions."
+  },
+  {
+    "file": "content/42-proofs-symplectic.typ",
+    "target": "eq:symplectic-short-factorisation",
+    "claim": "The corrected central parameter and the two displayed factors reproduce the short-root product.",
+    "hypotheses": "Commutative ring; displayed product parameter2θ−ζη; convenient short-root parametrisation assumes 2 invertible.",
+    "verification": "checks/sage/stabiliser_identities.py.",
+    "coverage": "partial",
+    "limitations": "The subsequent higher-rank Cauchy–Binet/parabolic discussion is an outline; it is not a completed independent elementary-membership proof."
+  },
+  {
+    "file": "content/42-proofs-symplectic.typ",
+    "target": "sec:proofs-symplectic",
+    "claim": "Absolute and relative symplectic elementary normality hold without invertibility of two; the mixed formula requires separate hypotheses.",
+    "hypotheses": "C_l rank≥2; commutative unital ring. HVZ mixed theorem additionally excludes F2 residues in C2 and requires c∈c²R+2cR in type C.",
+    "verification": "Taddei1985/Taddei1986; split-pullback argument; HazratVavilovZhang2013 Theorem 1 full source read.",
+    "coverage": "verified",
+    "limitations": "Mixed formula is not a normal-subgroup classification. No full Lean Chevalley theorem."
+  },
+  {
+    "file": "content/43-proofs-e6.typ",
+    "target": "eq:freudenthal-transvection",
+    "claim": "Freudenthal transformation preserves the cubic for orthogonal white column and white row, and the displayed basis case equals x_(α1).",
+    "hypotheses": "Integral27-dimensional model; vu=0; both u and v white; opposite column/dual cross-product signs.",
+    "verification": "Vavilov2000 §4.2 full text read; checks/sage/e6_representation.py checks all 702 ordered distinct basis pairs and the complete simple-root matrix. Vavilov2000 is a later work of the original author, not an independent source.",
+    "coverage": "partial",
+    "limitations": "The both-white preservation theorem is supported by a later work of the original author, not an independent source. The 702 basis-pair checks certify the root-operator cases, not arbitrary white vectors."
+  },
+  {
+    "file": "content/43-proofs-e6.typ",
+    "target": "eq:e6-singular-roots",
+    "claim": "The five listed roots form a singular commuting family with root differences.",
+    "hypotheses": "E6 Bourbaki-order conversion specified; chosen integral Chevalley basis.",
+    "verification": "checks/sage/e6_representation.py and checks/sage/exceptional_weights.py; independently generated E6 root system and pairwise root/operator tests.",
+    "coverage": "verified",
+    "limitations": "No unverified identification of signs with the faded original diagram."
+  },
+  {
+    "file": "content/43-proofs-e6.typ",
+    "target": "eq:e6-white-cancellations",
+    "claim": "The signed five-root product fixes every white column.",
+    "hypotheses": "Commutative unital ring; parameters sρξuρ with s=(1,1,1,1,−1); vanishing gradient of the integral cubic.",
+    "verification": "checks/sage/e6_representation.py integral27-dimensional matrices and invariant cubic; checks/sage/exceptional_weights.py diagram labels.",
+    "coverage": "verified",
+    "limitations": "Whiteness is required; does not prove general group-scheme identification or elementary membership."
+  },
+  {
+    "file": "content/43-proofs-e6.typ",
+    "target": "ss:e6-normality",
+    "claim": "The column-factor argument proves absolute E6 elementary normality using the elementary parabolic lemma for fake-root unipotents.",
+    "hypotheses": "Commutative unital ring; split simply connected minimal E6 model; fake-root shape A_m; Weyl-conjugate P1.",
+    "verification": "Vavilov2000 §4.3 Proposition 2, full published statement and context read; inverse-matrix summation and preceding verified white-column identities. Vavilov2000 is a later work of the original author, not an independent source.",
+    "coverage": "partial",
+    "limitations": "The fake-root parabolic-membership lemma is taken from a later work of the original author; its full independent verification is not recorded. The factor and column calculations are checked. No general parabolic-to-elementary implication is asserted."
+  },
+  {
+    "file": "content/43-proofs-e6.typ",
+    "target": "passage:relative-normality-pullback",
+    "claim": "Absolute normality over all coefficient rings implies relative normality using the split double ring.",
+    "hypotheses": "Chevalley group over commutative unital R; ideal I; absolute elementary normality over every commutative coefficient ring; R′={(a,b):a−b∈I}, J′={(a,0):a∈I}.",
+    "verification": "Vaserstein1986b §2 p221 read; complete root-word splitting and diagonal-section proof in the text.",
+    "coverage": "verified",
+    "limitations": "Does not assert E(R)∩G(R,I)=E(R,I) for an arbitrary nonsplit quotient. No Lean formalization of group functors."
+  },
+  {
+    "file": "content/44-concluding-remarks.typ",
+    "target": "ss:smaller-elementary-normalisers",
+    "claim": "For D_(n−1)⊂D_n, n≥4, overgroups have unique levels given by submodules of R² and elementary/stabiliser bounds.",
+    "hypotheses": "Every commutative unital ring; this particular subsystem and n≥4.",
+    "verification": "Gvozdevsky2022 Theorem 1 and §11.1, full arXiv2107.01258v2 statement, definitions, proof reduction and special case read.",
+    "coverage": "verified",
+    "limitations": "Not a solution for arbitrary subsystem, subring or homomorphism; no normality of the lower bound in the upper stabiliser asserted."
+  },
+  {
+    "file": "content/44-concluding-remarks.typ",
+    "target": "ss:non-split-groups",
+    "claim": "Standard normal structure holds for the specified isotropic reductive groups.",
+    "hypotheses": "Every semisimple normal R-subgroup contains Gm²; absolute root systems in all geometric closed fibres irreducible; structure constants invertible.",
+    "verification": "Stavrova2024 Theorem 1.1, full arXiv1801.08748v2 definitions and main proof §§7–10 read.",
+    "coverage": "verified",
+    "limitations": "No extension to isotropic rank one, reducible absolute fibres or noninvertible bad structure constants."
+  },
+  {
+    "file": "content/44-concluding-remarks.typ",
+    "target": "ss:infinite-dimensional-groups",
+    "claim": "Finite-rank constructions suggest research directions for infinite-dimensional groups.",
+    "hypotheses": "No universal infinite-dimensional root-system or ring hypothesis specified.",
+    "verification": "Read as an explicitly qualified research direction, not a mathematical theorem.",
+    "coverage": "verified",
+    "limitations": "No general infinite-dimensional normality or classification claimed."
+  },
+  {
+    "file": "content/43-proofs-e6.typ",
+    "target": "eq:freudenthal-transvection",
+    "claim": "One white argument alone does not ensure preservation of the E₆ cubic.",
+    "hypotheses": "The corrected integral cross-product signs; u=e₀, v=e₁*+e₁₄*, with vu=0 and u white.",
+    "verification": "checks/sage/e6_representation.py verifies a nonzero integer-polynomial cubic difference and an integral test vector whose cubic changes from 13 to 1.",
+    "coverage": "verified",
+    "limitations": "A counterexample to the stronger hypothesis; not a proof of the general both-white preservation theorem."
+  },
+  {
+    "file": "content/39-structure-theorems.typ",
+    "target": "ss:noncommutative-rings",
+    "claim": "The universal inverse-matrix algebra of size m>1 has E(m,R) neither normal nor subnormal in GL(m,R).",
+    "hypotheses": "Any field K; two generic noncommuting m-by-m matrices subject to xy=yx=1; m>1 and the same matrix size in the group.",
+    "verification": "Gerasimov1989 §10, printed pp. 61–62, full primary text read; specialize its universal representation construction to the infinite cyclic group.",
+    "coverage": "verified",
+    "limitations": "Primary-source verification only; the free-product theorem and non-subnormality are not formalized in Lean."
+  }
+]

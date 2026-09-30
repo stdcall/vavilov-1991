@@ -1,0 +1,1434 @@
+{
+  "entries": [
+    {
+      "printed_page": 222,
+      "section": "1. Chevalley groups",
+      "place": "Opening definition of a Chevalley–Demazure group scheme",
+      "original": "The split semisimple group scheme over the integers is named without a definition.",
+      "corrected": "Define an affine group scheme by its representing commutative Hopf algebra, and specify smoothness, connected semisimple geometric fibres, a split maximal torus, and the root datum.",
+      "reason": "The group law and the meaning of split semisimple must be specified before using ring-valued points.",
+      "verified_by": "Milne, Algebraic Groups, Definition 3.3; Conrad, Reductive Group Schemes, Definitions 3.1.1 and 5.1.1; Stepanov dissertation, §§1.5 and 1.9. These are sourced definitions, not a formal classification proof.",
+      "id": "C001"
+    },
+    {
+      "printed_page": 224,
+      "section": "1. Chevalley groups",
+      "place": "Weight decomposition and dominance",
+      "original": "The direct-sum decomposition uses weights with multiplicities, and dominance uses strict positivity.",
+      "corrected": "$V=⊕_(lambda∈overline(Lambda)(pi)) V^lambda$; dominance means $(omega,alpha_i^∨)≥0$ for every simple root.",
+      "reason": "A weight space occurs once in the direct sum, and dominant weights may lie on chamber walls.",
+      "verified_by": "Definitions of weight spaces and dominant weights; Bourbaki, Lie Groups and Lie Algebras, Chapter VI, §1, no. 10.",
+      "id": "C002"
+    },
+    {
+      "printed_page": 224,
+      "section": "1. Chevalley groups",
+      "place": "Highest weight vector",
+      "original": "The highest weight vector is not explicitly required to be nonzero.",
+      "corrected": "Require $0≠v^+∈V^omega$ and $pi(e_alpha)v^+=0$ for all $alpha∈Phi^+$.",
+      "reason": "The zero vector otherwise satisfies every annihilation condition.",
+      "verified_by": "Highest weight definition and the zero-vector test; no classification theorem is formalized here.",
+      "id": "C003"
+    },
+    {
+      "printed_page": 225,
+      "section": "1. Chevalley groups",
+      "place": "Canonical lattice and the term Weyl module",
+      "original": "The base change of an unspecified admissible lattice is called a Weyl module.",
+      "corrected": "For an irreducible highest weight module use the canonical lattice $V_(ZZ)=U(L)_(ZZ)v^+$; its base change is the Weyl module.",
+      "reason": "Arbitrary admissible lattices need not give the canonical Weyl module after reduction.",
+      "verified_by": "Kostant integral form and highest weight construction; Ree, Construction of Certain Semi-Simple Groups, Definition 1.5 and Theorem 1.6, p. 491, proves existence of admissible bases without a faithfulness assumption.",
+      "id": "C004"
+    },
+    {
+      "printed_page": 225,
+      "section": "1. Chevalley groups",
+      "place": "Exponential root operators and the group construction",
+      "original": "The lattice and Lie-algebra target are inconsistently denoted, and the exponential omits the representation map.",
+      "corrected": "Use the representation lattice $V_(ZZ)$, the Lie algebra $frak(\"gl\")(V)$, and $exp(xi pi(e_alpha))$. For a group construction of the prescribed type, choose a faithful Lie-algebra representation.",
+      "reason": "Nilpotence concerns an endomorphism, and a representation killing a simple component cannot construct the stated full root-system type.",
+      "verified_by": "Definition of the exponential of a nilpotent endomorphism; integral divided-power construction; this is not a Lean proof of the associated group-scheme theorem.",
+      "id": "C005"
+    },
+    {
+      "printed_page": 226,
+      "section": "1. Chevalley groups",
+      "place": "Differential of the representation",
+      "original": "The differential is written with a general linear group as its target.",
+      "corrected": "$pi:L_(CC)→frak(\"gl\")(V_(CC))$.",
+      "reason": "A differential of algebraic groups is a Lie-algebra homomorphism.",
+      "verified_by": "Definition of a differential representation.",
+      "id": "C006"
+    },
+    {
+      "printed_page": 227,
+      "section": "2. Elementary calculations",
+      "place": "Examples where the elementary and full simply connected groups coincide",
+      "original": "The polynomial-ring examples are stated without distinguishing rank-one exceptions.",
+      "corrected": "Retain the type and rank hypotheses of the cited results; in particular $SL(n,F[X_1,dots,X_m])=E(n,F[X_1,dots,X_m])$ for $n≥3$ and a field $F$.",
+      "reason": "The assertion fails for degree two over a polynomial ring in two variables.",
+      "verified_by": "Suslin, On the Structure of the Special Linear Group over Polynomial Rings, §6, Corollary 6.7 and the following remark; the counterexample is discussed in the introduction.",
+      "id": "C007"
+    },
+    {
+      "id": "C091",
+      "printed_page": 227,
+      "section": "2. Elementary calculations",
+      "place": "Polynomial-ring equality and nonstable K₁",
+      "original": "Polynomial-ring cases of $G_(\"sc\")=E_(\"sc\")$ are listed among known examples.",
+      "corrected": "Add the equality for every split simply connected simple group of rank at least two over a polynomial ring over any field, and homotopy invariance over regular algebras containing a perfect field.",
+      "reason": "Retrospective addition: later theorems remove the earlier type and small-characteristic exceptions. Perfectness is required for the regular-algebra statement, not for the field statement.",
+      "verified_by": "Stavrova, Homotopy invariance of non-stable K₁-functors (2014), Theorems 1.2–1.3 and proofs §§6.2–6.3 in the full author manuscript. No rank-one extension is asserted."
+    },
+    {
+      "printed_page": 229,
+      "section": "2. Elementary calculations",
+      "place": "Chevalley commutator formula",
+      "original": "The root-combination exponents are denoted by an ambiguous convention for natural numbers.",
+      "corrected": "In roots $i alpha+j beta$, both $i$ and $j$ are positive integers.",
+      "reason": "Editorial clarification of the summation domain; zero coefficients would introduce the original roots into the commutator product.",
+      "verified_by": "Chevalley commutator formula and its root-string indexing.",
+      "id": "C008"
+    },
+    {
+      "printed_page": 230,
+      "section": "2. Elementary calculations",
+      "place": "Order of the extended Weyl group",
+      "original": "The order $2^ell|W|$ is asserted without specifying the isogeny type.",
+      "corrected": "State this order for the simply connected group over a field of characteristic different from two.",
+      "reason": "The torus two-torsion image can be smaller in other isogeny types.",
+      "verified_by": "Simple-coroot torus in the simply connected group; the adjoint rank-one example has smaller extended Weyl group.",
+      "id": "C009"
+    },
+    {
+      "id": "C089",
+      "printed_page": 230,
+      "section": "2. Elementary calculations",
+      "place": "Question about centrality of the Steinberg kernel",
+      "original": "Centrality of $K_2(Phi,R)$ for $rk Phi≥4$ is posed as a question, with definitive proofs missing for some classical types.",
+      "corrected": "Add the affirmative answer $K_2(Phi,R)⊆Z(St(Phi,R))$ for every commutative ring and every reduced irreducible root system of rank at least three.",
+      "reason": "Retrospective addition: the general centrality theorem answers the historical question and improves its proposed rank bound.",
+      "verified_by": "Lavrenov–Sinchuk–Voronetsky, Centrality of K₂ for Chevalley groups: a pro-group approach (2024), §1 introductory central-extension theorem in the full arXiv version 2 (2021). This is a sourced theorem, not a Lean formalization."
+    },
+    {
+      "printed_page": 230,
+      "section": "2. Elementary calculations",
+      "place": "Elementary-generator bounds from Bruhat and Gauss decompositions",
+      "original": "The generator bounds are stated for the full group without specifying the simply connected hypothesis.",
+      "corrected": "Apply both the finite-width assertion and the displayed elementary-generator bounds to the simply connected group.",
+      "reason": "Additional torus elements need not belong to the elementary subgroup in other isogeny types.",
+      "verified_by": "Bruhat and semilocal Gauss decompositions together with the simple-coroot description of the simply connected torus.",
+      "id": "C010"
+    },
+    {
+      "id": "C092",
+      "printed_page": 231,
+      "section": "2. Elementary calculations",
+      "place": "Gauss decomposition over semilocal rings",
+      "original": "Gauss decomposition and an elementary-generator bound are given in the semilocal setting.",
+      "corrected": "Add $E(Phi,R)=H(Phi,R)U(Phi,R)U^-(Phi,R)U(Phi,R)$ for rings of Bass stable rank one, with $H=T inter E$.",
+      "reason": "Retrospective addition: stable rank one suffices for this decomposition of the elementary group. The result does not by itself identify the full group with its elementary subgroup.",
+      "verified_by": "Smolensky–Sury–Vavilov, Gauss decomposition for Chevalley groups, revisited (2012), Theorem 1, author manuscript p. 3, with rank reduction in §4. All root-system qualifications are retained."
+    },
+    {
+      "id": "C093",
+      "printed_page": 231,
+      "section": "2. Elementary calculations",
+      "place": "Bounds for elementary generation over arithmetic rings",
+      "original": "Positive arithmetic results are mentioned, including earlier estimates obtained using the generalized Riemann hypothesis.",
+      "corrected": "Add an unconditional bound depending only on the reduced irreducible root system, of rank at least two, for the simply connected group over every Dedekind ring of arithmetic type.",
+      "reason": "Retrospective addition: the uniform existence theorem includes totally imaginary number-field cases. It does not give explicit bounds for every number-field ring.",
+      "verified_by": "Kunyavskii–Plotkin–Vavilov, Uniform bounded elementary generation of Chevalley groups, Canadian Journal of Mathematics 78 (2026), Theorem A; full author manuscript version 3, p. 4 and §8.3. Print year 2026 is distinguished from online publication in 2024."
+    },
+    {
+      "printed_page": 232,
+      "section": "2. Elementary calculations",
+      "place": "The torus intersection with the elementary subgroup",
+      "original": "The torus intersection is identified with a character group without specifying the restriction image.",
+      "corrected": "$H=T∩E=op(\"Im\")(op(\"Hom\")(P(Phi),R^*)→op(\"Hom\")(P,R^*))$. Lift elementary root words through the simply connected central isogeny and use the inverse image of the torus to prove the equality.",
+      "reason": "Restriction need not be surjective; the argument must not assume surjectivity of the central isogeny on all ring-valued points.",
+      "verified_by": "Root-group lifts, the scheme-theoretic torus preimage, and the simple-coroot basis of the cocharacter lattice. The scheme-level assertion is not formalized in Lean.",
+      "id": "C011"
+    },
+    {
+      "printed_page": 233,
+      "section": "2. Elementary calculations",
+      "place": "Examples of extended classical groups",
+      "original": "The symplectic example does not distinguish the group from its similitude extension.",
+      "corrected": "Use $op(\"GSp\")(2ell,R)$ as the extended type-$C_ell$ example.",
+      "reason": "The extension allows multiplication of the alternating form by a unit.",
+      "verified_by": "Definition of the general symplectic similitude group.",
+      "id": "C012"
+    },
+    {
+      "printed_page": 233,
+      "section": "2. Elementary calculations",
+      "place": "Parabolic subset generated by a subset of simple roots",
+      "original": "The negative part is indexed by the entire simple-root set.",
+      "corrected": "Use the negatives of the chosen subset $J⊆Pi$.",
+      "reason": "Adjoining all negative simple roots would generate the entire root system rather than the intended proper parabolic subset.",
+      "verified_by": "Root-system definition of a standard parabolic subset.",
+      "id": "C013"
+    },
+    {
+      "printed_page": 234,
+      "section": "2. Elementary calculations",
+      "place": "Levi subgroup and the smaller semisimple subsystem",
+      "original": "The notation does not distinguish the full Levi, which contains the ambient torus, from its semisimple derived subgroup.",
+      "corrected": "Write $L(P,R)=T(Phi,R)G(Delta,R)$, where $G(Delta,R)$ denotes the derived semisimple subgroup with the induced root datum.",
+      "reason": "This distinction is necessary in the subsequent torus-elimination argument.",
+      "verified_by": "Split Levi root datum and the derived subgroup; the ring-valued identity uses the split torus quotient.",
+      "id": "C014"
+    },
+    {
+      "printed_page": 235,
+      "section": "3. Minimal modules",
+      "place": "Definition of a basic representation",
+      "original": "The definition does not explicitly exclude a trivial representation or a product of simple components.",
+      "corrected": "Require a nontrivial irreducible representation of a complex simple Lie algebra.",
+      "reason": "Hypothesis clarification for the stated classification of basic representations.",
+      "verified_by": "Highest weight classification and the Weyl-orbit condition used in the definition; no full classification is formalized.",
+      "id": "C015"
+    },
+    {
+      "printed_page": 239,
+      "section": "3. Minimal modules",
+      "place": "Unimodular vector",
+      "original": "The condition that $R v$ be a direct summand is used alone.",
+      "corrected": "Require the map $R→V$, $a↦a v$, to be a split injection; equivalently some linear functional sends $v$ to $1$.",
+      "reason": "The zero submodule is a direct summand, so the original condition also accepts the zero vector.",
+      "verified_by": "The zero-vector counterexample and the equivalence between a split injection and a functional taking value one.",
+      "id": "C016"
+    },
+    {
+      "printed_page": 239,
+      "section": "3. Minimal modules",
+      "place": "Integral functional at a zero weight",
+      "original": "The root functional is called unimodular, and zero weights are restricted to the adjoint representation.",
+      "corrected": "Use the integral root functional without asserting unimodularity; include the short-root basic representations with zero weights.",
+      "reason": "In adjoint type $A_1$ the root takes value two on the standard coroot, so the associated functional is not unimodular over the integers.",
+      "verified_by": "Integral type-$A_1$ pairing; basic short-root representation classification.",
+      "id": "C017"
+    },
+    {
+      "printed_page": 240,
+      "section": "4. Stable and general calculations",
+      "place": "Matrix-coefficient convention",
+      "original": "The description of a matrix coefficient reverses its row and column roles.",
+      "corrected": "$g_(lambda mu)$ is the coefficient of $v^lambda$ in $g v^mu$.",
+      "reason": "All subsequent matrices act on columns.",
+      "verified_by": "The fixed left action on a basis and ordinary matrix multiplication.",
+      "id": "C018"
+    },
+    {
+      "printed_page": 241,
+      "section": "4. Stable and general calculations",
+      "place": "Highest weight orbit and its affine cone",
+      "original": "Homogeneous quadratic equations are said to define the nonzero highest weight orbit over an unspecified field.",
+      "corrected": "Distinguish the affine cone, which includes zero, from its nonzero part; use the geometric single-orbit assertion over an algebraically closed field.",
+      "reason": "Homogeneous equations always contain zero, and rational orbits over a general field need not form one orbit.",
+      "verified_by": "Zero-vector test; in the adjoint representation of $SL(2)$ over the rationals, nonsquare scalar multiples of a highest root vector need not be conjugate.",
+      "id": "C019"
+    },
+    {
+      "printed_page": 244,
+      "section": "4. Stable and general calculations",
+      "place": "Chevalley–Matsumoto decomposition and torus elimination",
+      "original": "The one-omitted-root construction includes the adjoint type-$A_ell$ representation, and a unit pivot equal to one removes the torus without an isogeny hypothesis.",
+      "corrected": "Use a fundamental highest weight, excluding adjoint type $A_ell$; omit the torus when the group is simply connected and the highest-weight pivot equals one. Give the simple-coroot proof.",
+      "reason": "The fundamental character detects the omitted simple-coroot factor only under the stated assumptions.",
+      "verified_by": "Matsumoto decomposition; simple coroots form the simply connected cocharacter basis and the fundamental weight pairs with them by the Kronecker delta.",
+      "id": "C020"
+    },
+    {
+      "printed_page": 244,
+      "section": "4. Stable and general calculations",
+      "place": "Field case of the elementary-times-torus decomposition",
+      "original": "The argument tries to infer a suitable adjacent nonzero pivot from a zero corner entry.",
+      "corrected": "Use Bruhat decomposition directly: its unipotent factors and chosen Weyl representatives lie in $E$, so $G(Phi,K)=E(Phi,K)T(Phi,K)$.",
+      "reason": "The asserted pivot implication is unnecessary and does not give a general argument.",
+      "verified_by": "Bruhat decomposition and elementary representatives of simple reflections; this full group argument is not a Lean theorem.",
+      "id": "C021"
+    },
+    {
+      "id": "C098",
+      "printed_page": 245,
+      "section": "4. Stable and general calculations",
+      "place": "Notation for the group-scheme functor after the big-cell decomposition",
+      "original": "The original prints $G(Phi, )$ with a blank argument.",
+      "corrected": "Write $G(Phi,dot)$ to indicate the ring-valued functor.",
+      "reason": "Editorial notation clarification: the empty argument denotes a functor slot, not a particular coefficient ring. An explicit placeholder makes the meaning visible.",
+      "verified_by": "Printed page 245 was inspected directly; the functor notation agrees with the preceding construction."
+    },
+    {
+      "printed_page": 245,
+      "section": "5. Relative groups and unipotents",
+      "place": "Relative elementary generators",
+      "original": "The conjugate-generator assertion based on the commutator formula lacks a rank hypothesis.",
+      "corrected": "Require an irreducible root system of rank at least two for this assertion.",
+      "reason": "Rank-one elementary groups have different normality and generation behaviour.",
+      "verified_by": "Relative generator theorem; Vaserstein 1986 and the Stein–Tits–Vaserstein formulation in Hazrat–Vavilov–Zhang 2016, Theorem 1.",
+      "id": "C022"
+    },
+    {
+      "printed_page": 246,
+      "section": "5. Relative groups and unipotents",
+      "place": "Long-root commutator factor",
+      "original": "The final factor has parameter proportional to $xi^2$.",
+      "corrected": "For the displayed commutator with the other root parameter equal to one, the trailing parameter is proportional to $xi$.",
+      "reason": "The quadratic parameter leaves a residual long-root entry.",
+      "verified_by": "The complete type-$C_2$ matrix identity is checked symbolically over $ZZ[q]$; the printed quadratic parameter is rejected. The identity therefore holds after every commutative-ring specialization.",
+      "id": "C023"
+    },
+    {
+      "printed_page": 246,
+      "section": "5. Relative groups and unipotents",
+      "place": "Congruence reduction sequence",
+      "original": "The reduction sequence ends with all of $G(Phi,R/I)$ as though reduction were always onto.",
+      "corrected": "End the exact sequence at the image of reduction and explicitly distinguish it from $G(Phi,R/I)$.",
+      "reason": "Lifting all quotient-ring points is not automatic.",
+      "verified_by": "First isomorphism theorem for groups; no surjectivity hypothesis is inserted.",
+      "id": "C024"
+    },
+    {
+      "printed_page": 247,
+      "section": "5. Relative groups and unipotents",
+      "place": "The double ring",
+      "original": "The ring double and its split projection are used implicitly.",
+      "corrected": "Define $D=R times_I R={(a,b)∈R^2:a-b∈I}$, its componentwise operations, and the diagonal splitting.",
+      "reason": "The pullback and splitting are needed to justify the relative-group argument.",
+      "verified_by": "Direct ring identities; Stepanov dissertation, §1.12; Vaserstein 1981, proof of Theorem 13, p. 460.",
+      "id": "C025"
+    },
+    {
+      "printed_page": 248,
+      "section": "5. Relative groups and unipotents",
+      "place": "Exactness in the elementary double diagram",
+      "original": "The elementary reduction row is called exact without qualification.",
+      "corrected": "The elementary sequence induced by the split projection of the double ring is split exact. The upper horizontal map in the reduced square is split surjective; elementary reduction modulo I need not have the relative elementary group as its kernel.",
+      "reason": "The split projection of the double and the generally nonsplit reduction modulo an ideal have different kernel properties.",
+      "verified_by": "Definitions of relative elementary groups and the relative $K_1$ obstruction.",
+      "id": "C026"
+    },
+    {
+      "printed_page": 248,
+      "section": "5. Relative groups and unipotents",
+      "place": "Outer-product description over a ring",
+      "original": "The rank of a displacement matrix is used to supply a minimal column–row factorization over an arbitrary ring.",
+      "corrected": "Use explicit finite outer-product descriptions over rings; reserve the minimal-rank factorization for fields.",
+      "reason": "Field rank-factorization arguments do not extend without module-theoretic assumptions.",
+      "verified_by": "Elementary matrix factorization over a field; no assertion about free image modules over an arbitrary ring.",
+      "id": "C027"
+    },
+    {
+      "printed_page": 249,
+      "section": "5. Relative groups and unipotents",
+      "place": "Reversed symplectic index",
+      "original": "$v_i=tilde(u)_(m-i)$.",
+      "corrected": "$v_i=tilde(u)_(m+1-i)$.",
+      "reason": "One-based reversal is indexed by $m+1-i$; the original gives index zero at $i=m$.",
+      "verified_by": "Indexing argument and a direct symplectic degree-four alternating-form check.",
+      "id": "C028"
+    },
+    {
+      "printed_page": 249,
+      "section": "5. Relative groups and unipotents",
+      "place": "Root-type terminology and scaling",
+      "original": "Unspecified equations are treated as a complete definition of root type, with unrestricted parameter scaling.",
+      "corrected": "Specify the equations in each representation and require that they be preserved by the indicated parameterization.",
+      "reason": "Membership in the group must follow from actual defining equations, rather than terminology alone.",
+      "verified_by": "Direct use of the displayed defining equations; no general classification is asserted.",
+      "id": "C029"
+    },
+    {
+      "printed_page": 251,
+      "section": "6. The classical cases",
+      "place": "Adjoint group in type A",
+      "original": "The adjoint type-$A_ell$ group is identified with $PSL(ell+1,R)$.",
+      "corrected": "Use the adjoint group scheme $PGL_(ell+1)$ and distinguish its $R$-points from the image of $SL(ell+1,R)$ modulo scalar matrices.",
+      "reason": "Central isogeny need not be surjective on ring-valued points.",
+      "verified_by": "The adjoint root datum in type A; over the real numbers the determinant-sign obstruction separates some adjoint group elements from the special-linear image.",
+      "id": "C030"
+    },
+    {
+      "printed_page": 251,
+      "section": "6. The classical cases",
+      "place": "The unstable special-linear quotient",
+      "original": "The quotient is written as a group also in rank one.",
+      "corrected": "For $ell≥2$ use $SL(ell+1,R)/E(ell+1,R)$ as a quotient group; in rank one it can only be a coset space.",
+      "reason": "$E(2,R)$ need not be normal.",
+      "verified_by": "Rank-one nonnormality examples and the normality theorem for degree at least three.",
+      "id": "C031"
+    },
+    {
+      "printed_page": 252,
+      "section": "6. The classical cases",
+      "place": "Odd orthogonal inverse matrix",
+      "original": "$a F a^t=F$, with the inverse-entry coefficients corresponding to a row action.",
+      "corrected": "For the stated column action use $a^t F a=F$ and the corresponding reversed factors one-half and two in the inverse entries.",
+      "reason": "The inverse-entry formulas must agree with the stated quadratic form and left action on columns.",
+      "verified_by": "Exact symbolic Gram and inverse-entry calculations in the classical-form checks: odd Gram identity and inverse entries, ranks two through five.",
+      "id": "C032"
+    },
+    {
+      "printed_page": 253,
+      "section": "6. The classical cases",
+      "place": "Odd orthogonal short-root matrix",
+      "original": "$e+xi e_(i 0)-2xi e_(0,-i)-xi^2 e_(i,-i)$.",
+      "corrected": "$e+2xi e_(i 0)-xi e_(0,-i)-xi^2 e_(i,-i)$.",
+      "reason": "The printed matrix fails to preserve the stated Q for column vectors.",
+      "verified_by": "Exact symbolic Gram and inverse-entry calculations in the classical-form checks: 28 symbolic identities over $ZZ[t]$, original matrices rejected.",
+      "id": "C033"
+    },
+    {
+      "printed_page": 254,
+      "section": "6. The classical cases",
+      "place": "Action of an odd orthogonal short root",
+      "original": "The coefficients one and two in the two affected coordinates are interchanged.",
+      "corrected": "Use $v_0→v_0-xi v_(-i)$ and $v_i→v_i+2xi v_0-xi^2 v_(-i)$ for the stated column action.",
+      "reason": "Use the corrected column-action short-root matrix.",
+      "verified_by": "Exact symbolic Gram and inverse-entry calculations in the classical-form checks.",
+      "id": "C034"
+    },
+    {
+      "printed_page": 255,
+      "section": "6. The classical cases",
+      "place": "Short-root symplectic matrix",
+      "original": "$e+xi e_(i j)-2xi e_(-j,-i)$.",
+      "corrected": "$e+xi e_(i j)-epsilon_i epsilon_j xi e_(-j,-i)$.",
+      "reason": "Misprinted coefficient contradicts the parameter identity immediately before it and fails the symplectic Gram identity.",
+      "verified_by": "Exact symbolic Gram and inverse-entry calculations in the classical-form checks: 160 symbolic matrices over $ZZ[t]$, original coefficient rejected.",
+      "id": "C035"
+    },
+    {
+      "printed_page": 254,
+      "section": "6. The classical cases",
+      "place": "Last term of the alternating form",
+      "original": "Last term of the alternating symplectic form has a plus sign.",
+      "corrected": "Last term has a minus sign.",
+      "reason": "Alternation and the stated anti-diagonal symplectic Gram matrix.",
+      "verified_by": "Exact symbolic Gram and inverse-entry calculations in the classical-form checks.",
+      "id": "C036"
+    },
+    {
+      "id": "C099",
+      "printed_page": 255,
+      "section": "6. The classical cases",
+      "place": "Symplectic K₁ quotient",
+      "original": "The expression $K_1(C_ell,R)=KSp_1(2ell,R)=Sp(2ell,R)/Ep(2ell,R)$ is given without an explicit rank restriction.",
+      "corrected": "State the quotient-group identification for $ell≥2$.",
+      "reason": "The quotient as a group uses elementary normality. Rank one is excluded from the uniform normality theorem and cannot be covered by this unqualified assertion over arbitrary rings.",
+      "verified_by": "Printed page 255 was inspected directly. The rank restriction follows from the stated Suslin–Taddei normality theorem; no new assertion about all rank-one symplectic groups is made."
+    },
+    {
+      "printed_page": 256,
+      "section": "6. The classical cases",
+      "place": "Even orthogonal matrix description",
+      "original": "The polar Gram-matrix and determinant equations are used without a hypothesis on two.",
+      "corrected": "Require two invertible for that matrix description; over every ring use the connected split quadratic orthogonal group scheme.",
+      "reason": "In characteristic two, preservation of the polar bilinear form does not imply preservation of the quadratic form.",
+      "verified_by": "Conrad, Reductive Group Schemes, Definition C.2.10 and Theorem C.2.11; Conrad 2015, Example 2.9; an explicit root-matrix counterexample in characteristic two.",
+      "id": "C037"
+    },
+    {
+      "printed_page": 257,
+      "section": "6. The classical cases",
+      "place": "Trilinear invariance condition",
+      "original": "A trilinear form is written as though it had one argument.",
+      "corrected": "Write $F(g x,g y,g z)=F(x,y,z)$ for its invariance.",
+      "reason": "Clarify the three arguments of an alternating trilinear form.",
+      "verified_by": "Multilinearity and definition of isometry.",
+      "id": "C038"
+    },
+    {
+      "printed_page": 257,
+      "section": "6. The classical cases",
+      "place": "Identification of the automorphism group scheme",
+      "original": "Two affine group schemes are isomorphic if their groups of geometric points are isomorphic.",
+      "corrected": "Use the split Zorn octonion algebra and its automorphism group scheme. When two is invertible, recover the multiplication from the quadratic and alternating trilinear forms.",
+      "reason": "Geometric point sets do not detect nonreduced scheme structure.",
+      "verified_by": "Conrad (2015), Theorem B.14; Asok–Hoyois–Wendt (2019), Definition 2.1.9 and Theorem 2.2.1; Exact split-octonion norm and trilinear-form calculations.",
+      "id": "C039"
+    },
+    {
+      "printed_page": 257,
+      "section": "6. The classical cases",
+      "place": "Coefficient of the split quadratic norm",
+      "original": "$Q(x)=-2x_0^2+sum_(i=1)^ell x_i x_(-i)$.",
+      "corrected": "$Q(x)=-x_0^2+sum_(i=1)^ell x_i x_(-i)$, in the stated split-octonion normalization.",
+      "reason": "The printed coefficient is incompatible with the given alternating Dickson form; its joint stabilizer has Lie dimension 8 rather than 14 in characteristic zero.",
+      "verified_by": "Asok–Hoyois–Wendt (2019), Definition 2.1.9; exact split-octonion norm-composition and trilinear calculations, including all 343 basis triples and the two joint-stabilizer Lie dimensions.",
+      "id": "C040"
+    },
+    {
+      "printed_page": 261,
+      "section": "7. The cubic form for E6",
+      "place": "Three-matrix model of the cubic norm",
+      "original": "$det(x)+det(y)+det(z)+tr(x y z)$.",
+      "corrected": "$det(x)+det(y)+det(z)-tr(x y z)$, in the chosen integral three-matrix normalization.",
+      "reason": "Use the consistent integral matrix model with the author’s later sign convention.",
+      "verified_by": "Vavilov (1996), §8, p. 93; Conrad (2015), equation (6.6).",
+      "id": "C041"
+    },
+    {
+      "id": "C100",
+      "printed_page": 261,
+      "section": "7. The cubic form for E6",
+      "place": "Integral comparison of the three-matrix and weight-basis cubics",
+      "original": "The two realizations of the cubic invariant are discussed without an explicit integral comparison.",
+      "corrected": "Explain their integral signed-permutation isometry and link the explicit change-of-basis certificate and its polynomial verification.",
+      "reason": "A unimodular integral isometry transfers the stabilizer scheme identification between the two models after every commutative base change.",
+      "verified_by": "Conrad (2015), formula (6.6) and Theorem C.2; checks/sage/e6_norm_model.py verifies the complete 45-term polynomial identity over Z and the signed permutation determinant. The scheme theorem remains an explicitly cited external dependency."
+    },
+    {
+      "printed_page": 264,
+      "section": "7. The cubic form for E6",
+      "place": "Schläfli graph",
+      "original": "The graph has girth two.",
+      "corrected": "The graph has diameter two; its girth is three.",
+      "reason": "Strongly regular Schläfli graph has parameters (27, 16, 10, 8) and contains triangles.",
+      "verified_by": "Exact finite exceptional-root and weight-data calculations.",
+      "id": "C042"
+    },
+    {
+      "printed_page": 265,
+      "section": "7. The cubic form for E6",
+      "place": "Cubic triples and lines",
+      "original": "45 triples of non-intersecting lines.",
+      "corrected": "45 triples corresponding to tritangent plane sections.",
+      "reason": "Adjacency is skewness; the cubic triples are pairwise nonadjacent and therefore pairwise intersecting.",
+      "verified_by": "Exact verification of all 45 cubic weight triples and the standard correspondence with the 27 lines.",
+      "id": "C043"
+    },
+    {
+      "printed_page": 266,
+      "section": "7. The cubic form for E6",
+      "place": "Two polarization conventions",
+      "original": "The Jordan-algebra polarization and complete integral polarization are not distinguished.",
+      "corrected": "Distinguish the normalization $f(x,x,x)=F(x)$ in the characteristic-zero Jordan discussion from the complete integral polarization $f(x,x,x)=6F(x)$.",
+      "reason": "Dividing complete polarization by six is unavailable in small characteristics.",
+      "verified_by": "Direct expansion of the cubic norm and its complete polarization over the integers.",
+      "id": "C044"
+    },
+    {
+      "printed_page": 267,
+      "section": "7. The cubic form for E6",
+      "place": "Polarized product of basis vectors",
+      "original": "The product of two nonadjacent weight-basis vectors omits the signed coefficient of the cubic monomial.",
+      "corrected": "Include the coefficient $c_(lambda mu nu)$ of that cubic monomial in the polarized basis-vector product.",
+      "reason": "Signed coefficients of the preceding cubic norm also occur in its polarization.",
+      "verified_by": "Definition of the polarization.",
+      "id": "C045"
+    },
+    {
+      "printed_page": 268,
+      "section": "7. The cubic form for E6",
+      "place": "Integral cubic stabilizer scheme",
+      "original": "The stabilizer of the polarized trilinear form is identified with the group over every ring by checking field-valued points.",
+      "corrected": "Use the cubic-polynomial stabilizer scheme, with preservation after every base change, and the integral scheme identification.",
+      "reason": "Symmetric polarization loses integral information in small characteristics, and geometric points alone do not determine a group scheme.",
+      "verified_by": "Conrad (2015), Appendix C, Theorem C.2 and Lemmas C.3–C.4. The integral comparison with the weight-basis cubic is verified by checks/sage/e6_norm_model.py.",
+      "id": "C046"
+    },
+    {
+      "printed_page": 268,
+      "section": "7. The cubic form for E6",
+      "place": "White, grey and black vectors",
+      "original": "The colour tests use repeated arguments of the complete trilinear polarization without a small-characteristic adjustment.",
+      "corrected": "Use the quadratic adjoint and cubic norm uniformly; their complete polarization satisfies $f(x,x,x)=6F(x)$.",
+      "reason": "Repeated polarization acquires factors two and six; direct vanishing tests degenerate in characteristics two and three.",
+      "verified_by": "Explicit partial polarization over the integers and exact finite exceptional-root and weight-data calculations.",
+      "id": "C047"
+    },
+    {
+      "printed_page": 269,
+      "section": "7. The cubic form for E6",
+      "place": "Geometric orbit illustration",
+      "original": "The geometric orbit picture is read as a statement over arbitrary fields or rings.",
+      "corrected": "Restrict this orbit illustration to algebraically closed fields of characteristic different from two and three; retain the integral adjoint definitions separately.",
+      "reason": "Rational orbits and small-characteristic orbits require additional results.",
+      "verified_by": "The cubic norm distinguishes norm-value orbits; the displayed polarization argument requires the stated characteristic assumptions. No rational-orbit theorem is claimed.",
+      "id": "C048"
+    },
+    {
+      "printed_page": 270,
+      "section": "7. The cubic form for E6",
+      "place": "Ten-dimensional orthogonal block",
+      "original": "Orthogonal equations on the ten-dimensional block finish the full isometry identification.",
+      "corrected": "Retain block geometry as illustration; identify the full stabilizer using the scheme theorem.",
+      "reason": "The half-spin block and ring-valued scheme structure require further arguments.",
+      "verified_by": "Conrad (2015), Appendix C.",
+      "id": "C049"
+    },
+    {
+      "printed_page": 271,
+      "section": "8. A phoenix view of other exceptional groups",
+      "place": "Entry counts in the basic type-F4 representation",
+      "original": "Nonzero matrix-entry counts and displacement rank are stated without excluding vanishing parameters or bad characteristics.",
+      "corrected": "State these counts in characteristic zero with nonzero root parameter.",
+      "reason": "Coefficients and parameters can vanish after specialization.",
+      "verified_by": "The stated characteristic-zero representation and root-string dimensions; no uniform all-ring entry count is asserted.",
+      "id": "C050"
+    },
+    {
+      "printed_page": 274,
+      "section": "8. A phoenix view of other exceptional groups",
+      "place": "Fractional quartic model",
+      "original": "The displayed fractional quartic and symmetric polarization are written as a realization over an arbitrary ring.",
+      "corrected": "State the displayed construction over a field of characteristic zero and explicitly require integral/small-characteristic alternatives elsewhere.",
+      "reason": "The fractions one-half, one-quarter and one-sixteenth, and division in polarization, are unavailable over an arbitrary ring.",
+      "verified_by": "The displayed fractional formulas and the subsequent explicit characteristic-zero restriction in the original discussion.",
+      "id": "C051"
+    },
+    {
+      "id": "C094",
+      "printed_page": 274,
+      "section": "8. A phoenix view of other exceptional groups",
+      "place": "Integral construction of E₇ after the fractional quartic model",
+      "original": "The invariant-form discussion uses formulas with denominators and asks for characteristic-independent constructions.",
+      "corrected": "Add the integral alternating and four-linear forms defining the simply connected $E_7$ group scheme over $ZZ$, and the 133-quadrics ideal whose stabiliser is the extended group scheme.",
+      "reason": "Retrospective addition: these scheme identifications apply after base change to every commutative ring. The integral four-linear form need not be symmetric and is not obtained by naively polarising the displayed fractional quartic.",
+      "verified_by": "Vavilov–Luzgarev, Normaliser of the Chevalley group of type E₇, English publication (2016), Theorems 1–2, §§4 and 9 in the full English author manuscript. This later work by the original author and a coauthor is not an independent source."
+    },
+    {
+      "printed_page": 278,
+      "section": "8. A phoenix view of other exceptional groups",
+      "place": "Multilinear forms in the adjoint representation",
+      "original": "The isometry group of either the bracket/Killing trilinear form or its four-linear analogue is identified with the group of type E8.",
+      "corrected": "Explain the scalar third- and fourth-root-of-unity obstructions. With the perfect normalized invariant pairing and the trilinear form together, reconstruct the Lie bracket; do not infer an unrestricted group-scheme identification in bad characteristics.",
+      "reason": "Scalar multiplication scales a trilinear invariant by the cube and a four-linear invariant by the fourth power. Preserving either invariant alone therefore need not preserve the Lie bracket. The Killing form is sixty times the normalized pairing and degenerates in characteristics two, three and five.",
+      "verified_by": "Direct scalar-substitution calculation; exact type-E8 root-data calculations, including Cartan determinant one and dual Coxeter number thirty.",
+      "id": "C052"
+    },
+    {
+      "printed_page": 282,
+      "section": "9. The structure theorems",
+      "place": "Restrictions in the normal-structure theorem",
+      "original": "The two-invertible restriction lists type $A_ell$ instead of $C_ell$, and the type-$G_2$ residue-field restriction is absent.",
+      "corrected": "Require two invertible for $B_ell,C_ell,F_4$; for $G_2$ require three invertible and exclude residue fields with two elements.",
+      "reason": "Correction of the theorem hypotheses; the printed type-$A_ell$ entry misses the symplectic obstruction.",
+      "verified_by": "Vaserstein, On Normal Subgroups of Chevalley Groups over Commutative Rings, Theorems 3–4, p. 220. This external classification theorem is not formalized in Lean.",
+      "id": "C053"
+    },
+    {
+      "printed_page": 285,
+      "section": "9. The structure theorems",
+      "place": "Reduction modulo the common level",
+      "original": "Lifting an extracted root element modulo the level is treated as immediately giving a root element in the subgroup.",
+      "corrected": "Use root-level generation and relative perfectness: the root element and its conjugates become central modulo the subgroup, so their normal closure has trivial commutators and lies in the subgroup.",
+      "reason": "Proof completion under the stated normal-structure hypotheses.",
+      "verified_by": "Vaserstein 1986, Theorems 3–4, p. 220; normal-closure and relative-perfectness argument in the text, not a full Lean classification proof.",
+      "id": "C054"
+    },
+    {
+      "printed_page": 285,
+      "section": "9. The structure theorems",
+      "place": "Parabolic extraction",
+      "original": "Noncentrality and a Levi decomposition are used as though they alone supplied extraction of a root element.",
+      "corrected": "Identify the additional centralizer and extraction lemma required, and cite the established theorem under its exact hypotheses.",
+      "reason": "Arbitrary Levi elements need not give nontrivial action on the desired unipotent radical.",
+      "verified_by": "Vaserstein 1986, Theorem 4; the section outlines the extraction method rather than replacing the external theorem with an unproved implication.",
+      "id": "C055"
+    },
+    {
+      "printed_page": 286,
+      "section": "9. The structure theorems",
+      "place": "Rank-one simple-group examples",
+      "original": "The modular-group quotient discussion does not explicitly restrict the alternating examples to simple groups or explain the older unitary field-size notation.",
+      "corrected": "Use $A_n$ with $n≥5$ in the simple-group statement, allow trivial generator images in the presentation $a^2=b^3=1$, and explain the historical notation for $op(\"PSU\")_3(3)$.",
+      "reason": "Editorial clarification of the stated examples and presentation.",
+      "verified_by": "The modular-group free-product presentation and the finite-simple-group context; no general finite-simple-group generation theorem is formalized.",
+      "id": "C056"
+    },
+    {
+      "id": "C095",
+      "printed_page": 288,
+      "section": "9. The structure theorems",
+      "place": "Question about the class of noncommutative rings with standard normal structure",
+      "original": "The exact class of rings with standard commutator formulae and standard normal structure is left undetermined.",
+      "corrected": "Add that, for $n≥3$ and a two-sided ideal $J$ contained in the Jacobson radical, standard normal structure of $GL(n,R)$ is equivalent to that of $GL(n,R/J)$.",
+      "reason": "Retrospective addition: the theorem reduces the question to a semiprimitive quotient. It neither characterises all such rings nor settles the separate conjecture concerning normal subgroups inside the elementary group.",
+      "verified_by": "Stepanov, On the normal structure of the general linear group over a ring (1999), Theorem 4.6 and Corollary 4.7, full author text p. 9. The separate erratum to Proposition 1.9 was read; the authors state that its false converse is not used in the article."
+    },
+    {
+      "printed_page": 290,
+      "section": "10. The proofs for Aℓ",
+      "place": "Whitehead–Vaserstein diagonal blocks",
+      "original": "$mat(e+x y,0;0,e+y x)∈E(r+s,R,I)$.",
+      "corrected": "$mat(e+x y,0;0,(e+y x)^(-1))∈E(r+s,R,I)$. Extend the algebraic argument to associative unital rings and two-sided ideals.",
+      "reason": "The inverse is missing on the second diagonal block; without it even the determinant need not equal one.",
+      "verified_by": "Suslin 1977, §1, Lemma 1.1, English translation p. 222; Quillen notebook I, entry 10 January 1995, p. 174. Lean proves rectangular Jacobson inverse and four-/five-factor block identities; ideal and elementary membership are supplied by the explicit text argument.",
+      "id": "C057"
+    },
+    {
+      "printed_page": 290,
+      "section": "10. The proofs for Aℓ",
+      "place": "Zero-component relative transvection lemma",
+      "original": "The proof factors the transvection through the rectangular block lemma.",
+      "corrected": "For a zero component of the row, remove that component of the column and write the transvection as one relative elementary factor times a rank-one commutator.",
+      "reason": "Proof simplification and extension to associative unital rings with a two-sided ideal.",
+      "verified_by": "Vavilov–Stepanov, Decomposition of Transvections, §3, Lemma 3, p. 12. Lean proves the full zero-component factorization and ideal-entry assertion; elementary-group membership remains the short normal-closure argument in the text.",
+      "id": "C058"
+    },
+    {
+      "printed_page": 293,
+      "section": "10. The proofs for Aℓ",
+      "place": "Stable row elimination",
+      "original": "The eliminating elementary parameters have the same sign as the chosen coefficients in the preceding sum.",
+      "corrected": "If $a_n-1=sum_(i=1)^ell a'_i c_i$, use $y=t_(1 n)(-c_1)dots t_(ell n)(-c_ell)$.",
+      "reason": "The last coordinate is reduced to one by subtraction of the displayed sum.",
+      "verified_by": "Direct multiplication of the row by elementary matrices; this sign correction is not formalized in Lean.",
+      "id": "C059"
+    },
+    {
+      "printed_page": 294,
+      "section": "10. The proofs for Aℓ",
+      "place": "Suslin antisymmetric decomposition",
+      "original": "The antisymmetric two-index expression is summed over all ordered pairs.",
+      "corrected": "Sum the antisymmetric expression over $i<j$, without division by two.",
+      "reason": "The original ordered-pair sum counts each contribution twice.",
+      "verified_by": "Suslin 1977, §1, Lemma 1.3; Lean proves the triangular decomposition for every finite linearly ordered index type over an arbitrary commutative ring. The elementary normality theorem itself is not formalized.",
+      "id": "C060"
+    },
+    {
+      "printed_page": 295,
+      "section": "10. The proofs for Aℓ",
+      "place": "Stepanov fixed-column factors",
+      "original": "The indices and signs in the displayed two-factor construction do not match its claimed product.",
+      "corrected": "Choose $x_i=t_(1 2)(g_(i 3)xi g'_(3 i))t_(1 3)(-g_(i 3)xi g'_(2 i))$ and use the resulting product. When a fixed column forces a coordinate to vanish, apply a left inverse to the unimodular centre.",
+      "reason": "A zero product does not imply a zero coordinate over a ring with zero divisors without the unimodularity argument.",
+      "verified_by": "Exact inverse-matrix identities and symbolic elementary calculations; the left inverse is the first row of the inverse conjugating matrix. No full group normality theorem is claimed as Lean-verified.",
+      "id": "C061"
+    },
+    {
+      "printed_page": 300,
+      "section": "11. The proofs for Bℓ and Dℓ",
+      "place": "Isometries and similitudes in transvection conjugation",
+      "original": "Isometry conjugation and similitude conjugation are not distinguished in the parameter formula.",
+      "corrected": "For an isometry retain the parameter; for a similitude scale it by the inverse multiplier. Require two invertible wherever one-half occurs.",
+      "reason": "Normalization and hypothesis clarification.",
+      "verified_by": "Direct substitution in the orthogonal transvection formula and exact matrix preservation checks.",
+      "id": "C062"
+    },
+    {
+      "printed_page": 301,
+      "section": "11. The proofs for Bℓ and Dℓ",
+      "place": "Three-factor orthogonal product",
+      "original": "A three-factor product is identified with a single orthogonal transvection using the stated linear expression for its second vector.",
+      "corrected": "Retain the three-factor product and its verified matrix and fixed-column equations; remove the false single-transvection identity.",
+      "reason": "The proposed vector expression gives a different matrix even over the rationals.",
+      "verified_by": "Exact counterexample in the split degree-six orthogonal group with parameters one, zero, zero; universal polynomial matrix verification. The calculation does not establish general conjugacy to one root unipotent.",
+      "id": "C063"
+    },
+    {
+      "printed_page": 303,
+      "section": "11. The proofs for Bℓ and Dℓ",
+      "place": "Orthogonal fixed-column factors and the end of the normality argument",
+      "original": "The factor signs do not match the displayed product, and fixing a column is treated as sufficient for relative elementary membership.",
+      "corrected": "Correct the factor signs; state that the geometric construction uses at least three hyperbolic directions. Close normality by the uniform normality theorem and the split-pullback argument.",
+      "reason": "Membership in a proper parabolic does not itself imply elementary membership of its Levi component.",
+      "verified_by": "Exact orthogonal matrix identities and fixed-column parameters; Taddei uniform normality and Vaserstein relative split-pullback. The outlined geometric calculation is not a self-contained classification proof and does not cover rank two by itself.",
+      "id": "C064"
+    },
+    {
+      "printed_page": 304,
+      "section": "11. The proofs for Bℓ and Dℓ",
+      "place": "Unitary levels and isotropic reductive extension",
+      "original": "The discussion extends ideal-level orthogonal arguments without defining form parameters, form ideals, or strictly proper parabolics.",
+      "corrected": "Point to the form-parameter and form-ideal definitions; define strictly proper parabolics and require rank at least two in every irreducible relative component after every maximal localization.",
+      "reason": "Editorial addition of definitions and essential hypotheses for the modern extension.",
+      "verified_by": "Hahn–O’Meara, §§5.1C, 5.2D, 5.3D; Petrov–Stavrova, Theorem 1. These external group theorems are not formalized in Lean.",
+      "id": "C065"
+    },
+    {
+      "printed_page": 305,
+      "section": "12. The proofs for Cℓ",
+      "place": "Alternating pairing and transvection signs",
+      "original": "The row-vector identification is not consistent with both the alternating pairing and the displayed plus-sign matrices.",
+      "corrected": "Set $tilde(u)=u^t F=-(F u)^t$, so $(u,v)=tilde(u)v$ and $T_u(xi)=e+u xi tilde(u)$, with the corresponding two-vector formula.",
+      "reason": "Transposing an alternating Gram matrix introduces a minus sign.",
+      "verified_by": "Exact symbolic symplectic preservation and product calculations over the integers; no general symplectic group theorem is formalized.",
+      "id": "C066"
+    },
+    {
+      "printed_page": 309,
+      "section": "12. The proofs for Cℓ",
+      "place": "Short-root column stabilization and proof scope",
+      "original": "The minor-summing discussion is treated as completing the short-root product factorization.",
+      "corrected": "Retain the nonlinear central parameter $2theta-zeta eta$ and label the geometry as an outline; use uniform normality and the split pullback for the full result.",
+      "reason": "Summing the linear minors alone does not prove the nonlinear product identity.",
+      "verified_by": "Universal polynomial symplectic matrix products and minor syzygies; Taddei normality; Hazrat–Vavilov–Zhang mixed commutator theorem with its explicit ring restrictions.",
+      "id": "C067"
+    },
+    {
+      "id": "C088",
+      "printed_page": 310,
+      "section": "13. The proofs for E6",
+      "place": "Freudenthal transvections: the dual cross product",
+      "original": "The cross products on the minimal module and its dual are used without explicit compatible sign conventions.",
+      "corrected": "For the plus sign in the transvection formula, define $v^lambda times v^mu=sum_nu c_(lambda mu nu)v_nu$ and $v_lambda times v_mu=-sum_nu c_(lambda mu nu)v^nu$.",
+      "reason": "Opposite signs are required to recover the exact elementary root operator; using the same coefficients in both products gives incorrect signs and nonzero non-root entries.",
+      "verified_by": "Exact integral matrices for all 702 ordered pairs of distinct basis weights: 432 root operators and 270 zero cancellations; complete comparison with the simple-root operator. This does not prove the general white-vector group statement."
+    },
+    {
+      "id": "C090",
+      "printed_page": 310,
+      "section": "13. The proofs for E6",
+      "place": "Whiteness hypothesis for Freudenthal transvections",
+      "original": "The transformation is said to preserve the cubic when $(u,v)=0$ and either $u$ or $v$ is white.",
+      "corrected": "Require $(u,v)=0$ and both $u$ and $v$ white in the stated preservation assertion.",
+      "reason": "One white argument is insufficient. In the corrected integral convention, the white column $u=e_0$ and the nonwhite row $v=e_1^*+e_14^*$ have zero pairing, but the resulting transformation changes the cubic at an integral test vector from 13 to 1. The proof uses only the both-white case.",
+      "verified_by": "Exact integer-polynomial counterexample in the E₆ representation check; Vavilov, A third look at weight diagrams, §4.2, explicitly assumes both arguments singular. This later work by the same author supplies the valid scope; it is not an independent source. The earlier correction to the dual cross-product sign is recorded separately in C088."
+    },
+    {
+      "printed_page": 313,
+      "section": "13. The proofs for E6",
+      "place": "Five-root column cancellation and choice of signs",
+      "original": "Signs are left implicit in the five commuting root factors and their cancellations.",
+      "corrected": "Use an explicit integral Chevalley basis with signs $(1,1,1,1,-1)$ and the first sign one; identify the two residual expressions as cubic-gradient components.",
+      "reason": "Verified normalization and proof completion; this fixes the sign needed for the recovered elementary root parameter.",
+      "verified_by": "Exact integral minuscule matrices satisfy the Serre and rank-one relations and preserve the invariant cubic. Polynomial substitution leaves exactly the stated two gradient components; no full group-scheme identification is claimed as a Lean result.",
+      "id": "C068"
+    },
+    {
+      "printed_page": 314,
+      "section": "13. The proofs for E6",
+      "place": "Elementary containment and relative normality",
+      "original": "Fixing the column and lying in a proper parabolic are treated as enough to infer relative elementary membership.",
+      "corrected": "State the exact fake-root shape and conjugate-parabolic hypothesis of the elementary-containment lemma, then give the full separate split-pullback proof of relative normality.",
+      "reason": "An arbitrary parabolic Levi element can carry a nontrivial elementary quotient.",
+      "verified_by": "Vavilov, A Third Look at Weight Diagrams, §4.3, Proposition 2, p. 237; Vaserstein 1986, §2, p. 221. The pullback word decomposition is explicit; the external containment theorem is not formalized.",
+      "id": "C069"
+    },
+    {
+      "id": "C096",
+      "printed_page": 315,
+      "section": "14. Concluding remarks",
+      "place": "Subgroups containing a subsystem elementary group",
+      "original": "The description of subgroups normalised by a sufficiently large subsystem elementary group is proposed as a direction of generalisation.",
+      "corrected": "Add the case $D_(n-1)⊆D_n$, $n≥4$, over any commutative ring: every overgroup of $E(D_(n-1),R)$ has a unique level given by a submodule of $R^2$ and lies between the attached elementary group and Lie-algebra stabiliser.",
+      "reason": "Retrospective addition: subsystem levels need not be ideals. The cited unrestricted orthogonal case is distinguished from the additional restrictions in the general ADE theorem.",
+      "verified_by": "Gvozdevsky, Overgroups of subsystem subgroups in exceptional groups: nonideal levels (2022), Theorem 1 and §11.1; full author text, definitions and proof reduction read. Normality of the lower bound in the upper stabiliser is not asserted."
+    },
+    {
+      "id": "C097",
+      "printed_page": 317,
+      "section": "14. Concluding remarks",
+      "place": "Extensions to sufficiently isotropic nonsplit groups",
+      "original": "The normal structure of non-quasi-split groups over general rings is described as largely unexplored.",
+      "corrected": "Add the unique ideal sandwich for reductive groups of isotropic rank at least two, with irreducible absolute root systems in all geometric closed fibres and invertible structure constants.",
+      "reason": "Retrospective addition: the standard normal-structure theorem applies beyond split groups. The isotropic-rank condition concerns every semisimple normal subgroup; a single split torus of rank two does not suffice.",
+      "verified_by": "Stavrova–Stepanov, Normal structure of isotropic reductive groups over rings (2024), Theorem 1.1; definitions and the complete main proof in §§7–10 of the full author manuscript. The restrictions on structure constants are explicit."
+    },
+    {
+      "printed_page": 319,
+      "section": "References",
+      "place": "Reference 17",
+      "original": "Issue 1--3.",
+      "corrected": "Issue 3.",
+      "reason": "The publisher lists the article in issue three, not a combined issue.",
+      "verified_by": "Annals of Mathematics publisher record for volume 91 (1970), issue 3.",
+      "id": "C070"
+    },
+    {
+      "printed_page": 320,
+      "section": "References",
+      "place": "Reference 29, year and title",
+      "original": "The Penrose transform, its interactions with representation theory; 1984.",
+      "corrected": "The Penrose transform: its interaction with representation theory; 1989.",
+      "reason": "The cited monograph was published in 1989; its title uses the singular word interaction.",
+      "verified_by": "Contemporary review in the Proceedings of the Edinburgh Mathematical Society, DOI 10.1017/S0013091500005265; this is a secondary bibliographical source.",
+      "id": "C071"
+    },
+    {
+      "printed_page": 320,
+      "section": "References",
+      "place": "Reference 35",
+      "original": "Publication year: 1983.",
+      "corrected": "Publication year: 1982.",
+      "reason": "The original article is dated 1982.",
+      "verified_by": "Original article title page.",
+      "id": "C072"
+    },
+    {
+      "printed_page": 321,
+      "section": "References",
+      "place": "Reference 47, omitted date",
+      "original": "Compos.Math. V.61, N.1, P.3--41 (no year).",
+      "corrected": "Compositio Mathematica 61 (1987), no. 1, 3--41.",
+      "reason": "The reference omits the publication year.",
+      "verified_by": "Article title page and Numdam archive record.",
+      "id": "C073"
+    },
+    {
+      "printed_page": 321,
+      "section": "References",
+      "place": "Reference 41, choice of edition",
+      "original": "Bourbaki, Groupes et algèbres de Lie, Chapters 4–6, Hermann, 1968.",
+      "corrected": "Bourbaki, Lie Groups and Lie Algebras, Chapters 4–6, Springer, 2002, translated by Andrew Pressley.",
+      "reason": "Edition choice, not an original erratum: cite the available English translation and use its actual page locators while retaining reference number 41.",
+      "verified_by": "English title and copyright page; Chapter VI, Plate V, pp. 275–276, independently checked for the simple-root numbering.",
+      "id": "C074"
+    },
+    {
+      "printed_page": 322,
+      "section": "References",
+      "place": "Reference 59, year and pagination",
+      "original": "Chevalley, Certains schémas des groupes semi-simples, 1960, pages 1–16.",
+      "corrected": "Chevalley, Certains schémas de groupes semi-simples, May 1961, exposé 219, pages 219–234.",
+      "reason": "The title and publication data are fixed by the original exposé.",
+      "verified_by": "Numdam primary PDF title page and archive record.",
+      "id": "C075"
+    },
+    {
+      "printed_page": 324,
+      "section": "References",
+      "place": "Reference 91, first author's initials",
+      "original": "Faulkner J.N.",
+      "corrected": "Faulkner J.R.",
+      "reason": "The first author is J. R. Faulkner.",
+      "verified_by": "Publisher article record, DOI 10.1112/blms/9.1.1.",
+      "id": "C076"
+    },
+    {
+      "printed_page": 325,
+      "section": "References",
+      "place": "Reference 117, surname",
+      "original": "Hartshorn R.",
+      "corrected": "Hartshorne R.",
+      "reason": "The author surname is Hartshorne.",
+      "verified_by": "Monograph title and AMS bibliography.",
+      "id": "C077"
+    },
+    {
+      "printed_page": 326,
+      "section": "References",
+      "place": "Reference 127, omitted journal title",
+      "original": "1987, V.101, N.3, P.405--420 (journal omitted).",
+      "corrected": "Mathematical Proceedings of the Cambridge Philosophical Society 101 (1987), no. 3, 405--420.",
+      "reason": "The volume and pagination belong to Mathematical Proceedings of the Cambridge Philosophical Society.",
+      "verified_by": "Cambridge author index and publisher record, DOI 10.1017/S0305004100066792.",
+      "id": "C078"
+    },
+    {
+      "printed_page": 326,
+      "section": "References",
+      "place": "Reference 138",
+      "original": "Russian Mathematical Surveys 39 (1984), 245--246.",
+      "corrected": "Russian Mathematical Surveys 39 (1984), no. 3, 203–204.",
+      "reason": "Retain the English translation and replace the Russian-original pagination with its actual English page range.",
+      "verified_by": "Full English Math-Net article, pp. 203–204, DOI 10.1070/RM1984v039n03ABEH003170.",
+      "id": "C079"
+    },
+    {
+      "printed_page": 327,
+      "section": "References",
+      "place": "Reference 142",
+      "original": "Journal of Soviet Mathematics 132 (1983), 119–121.",
+      "corrected": "A theorem of Suslin. Journal of Soviet Mathematics 30 (1985), no. 1, 1879–1881.",
+      "reason": "The original citation combines the English journal with Russian-original volume, year and pages. Cite the actual English translation and its translated title.",
+      "verified_by": "Springer publication record explicitly identifies the translation of Zapiski Nauchnykh Seminarov LOMI 132 (1983), 119–121; DOI 10.1007/BF02105104. Bibliographic metadata checked; the English full text was unavailable.",
+      "id": "C080"
+    },
+    {
+      "printed_page": 330,
+      "section": "References",
+      "place": "Reference 188, title",
+      "original": "Maximal subgroups of exceptional exceptional groups.",
+      "corrected": "Maximal subgroups of exceptional algebraic groups.",
+      "reason": "The repeated word exceptional replaces the adjective algebraic in the title.",
+      "verified_by": "AMS publication advertisement reproducing the book cover.",
+      "id": "C081"
+    },
+    {
+      "printed_page": 330,
+      "section": "References",
+      "place": "Reference 189",
+      "original": "No date, volume or page range.",
+      "corrected": "Transactions of the American Mathematical Society 97 (1960), 286–316.",
+      "reason": "The omitted volume, year and pages are needed to identify the article.",
+      "verified_by": "AMS bibliography; a secondary bibliographical source.",
+      "id": "C082"
+    },
+    {
+      "printed_page": 330,
+      "section": "References",
+      "place": "Reference 198",
+      "original": "Second edition (1981), 320 pages.",
+      "corrected": "First edition (1981), 304 pages.",
+      "reason": "The 1981 publication is the first edition, with 304 pages.",
+      "verified_by": "Official publisher copyright page (physical page 5), https://link.springer.com/content/pdf/bfm:978-0-8176-4840-4/1: 1981 is explicitly the first edition and 1998 the second edition. The actual copyright page was read visually; the monograph contents are not certified by this check. A library catalogue record confirms the 1981 edition page count.",
+      "id": "C083"
+    },
+    {
+      "printed_page": 331,
+      "section": "References",
+      "place": "Reference 216, journal/volume combination",
+      "original": "Soviet Math. Doklady, 1976, V.229, N.5, P.1063--1066.",
+      "corrected": "Soviet Mathematics Doklady 17 (1976), no. 4, 1160–1164.",
+      "reason": "Retain the English translation and replace the Russian-original volume, issue and pages with its actual publication data.",
+      "verified_by": "AMS Notices, November 2021, article bibliography; Vaserstein–Suslin, Mathematics of the USSR-Izvestiya 10 (1976), p. 1001, reference 50. Bibliographic data checked in publisher-indexed text; the translated article's full text was unavailable.",
+      "id": "C084"
+    },
+    {
+      "printed_page": 331,
+      "section": "References",
+      "place": "Reference 218, title and journal",
+      "original": "On the structure of the general linear group over polynomial rings. Soviet Math. Izv., 1977, V.41, N.2, P.503--516.",
+      "corrected": "On the structure of the special linear group over polynomial rings. Mathematics of the USSR-Izvestiya 11 (1977), no. 2, 221–238.",
+      "reason": "Correct general to special in the title and use the actual English journal, volume and pagination.",
+      "verified_by": "Russian and English article title pages and final printed folios; Math-Net English publication record, DOI 10.1070/IM1977v011n02ABEH001709.",
+      "id": "C085"
+    },
+    {
+      "printed_page": 333,
+      "section": "References",
+      "place": "Reference 251, journal/volume combination",
+      "original": "Soviet Math. Izv., 1976, V.40, N.5, P.993--1054.",
+      "corrected": "Mathematics of the USSR-Izvestiya 10 (1976), no. 5, 937–1001.",
+      "reason": "Retain the English translation and replace the Russian-original volume and pages with its actual English publication data.",
+      "verified_by": "Math-Net English publication record, DOI 10.1070/IM1976v010n05ABEH001822.",
+      "id": "C086"
+    },
+    {
+      "printed_page": 333,
+      "section": "References",
+      "place": "Reference 244, title",
+      "original": "On normal subgroups of GL over a ring.",
+      "corrected": "On the normal subgroups of the general linear group over a ring.",
+      "reason": "The published article title includes the definite article.",
+      "verified_by": "Vaserstein article title page and publisher DOI 10.1007/BFb0089533.",
+      "id": "C087"
+    },
+    {
+      "id": "C101",
+      "printed_page": 219,
+      "section": "Introduction",
+      "place": "Grammatical subject and possessive construction",
+      "original": "while for the exceptional ones have been obtained; the Stepanov’s proof",
+      "corrected": "while those for the exceptional cases have been obtained; Stepanov’s proof",
+      "reason": "Supply the missing subject of the exceptional-case clause and remove the article before the possessive.",
+      "verified_by": "Direct reading of the printed introduction, pp. 219–220."
+    },
+    {
+      "id": "C102",
+      "printed_page": 259,
+      "section": "7. The cubic form for E6",
+      "place": "Root paths and endpoint pairs",
+      "original": "There are six such paths for any root; the decomposition into positive simple roots is stated for an arbitrary root.",
+      "corrected": "There are six distinct endpoint pairs for each root; a pair can be joined by several paths. Use positive-root decompositions and reverse paths for negative roots.",
+      "reason": "For the displayed root $alpha_1 + alpha_3 + alpha_4$ there are eight paths but only six endpoint pairs.",
+      "verified_by": "Exact enumeration of all 72 E6 root differences in the independently generated 27-weight orbit; eight paths and six endpoint pairs for the displayed example."
+    },
+    {
+      "id": "C103",
+      "printed_page": 261,
+      "section": "7. The cubic form for E6",
+      "place": "Meaning of degeneracy",
+      "original": "A degenerate form is contrasted with a nondegenerate form without defining the term.",
+      "corrected": "For a homogeneous form of degree at least three, explicitly use nondegeneracy to mean smoothness of the projective hypersurface F=0; degeneracy means singularity.",
+      "reason": "The geometric meaning is needed for the finite-isometry-group assertion; the multilinear radical is a different invariant.",
+      "verified_by": "Esser, Automorphisms of weighted projective hypersurfaces, Theorem 3.1 and Remark 3.2 in arXiv version 4; the regular-sequence proof establishes finiteness of the linear projective stabilizer for the ordinary smooth hypersurface case. Strict linear isometries have the finite scalar kernel mu_d. This specifies the usage in this edition rather than attributing an unstated definition to the author."
+    },
+    {
+      "id": "C104",
+      "printed_page": 258,
+      "section": "6. The classical cases",
+      "place": "Short-root action in the G2 module",
+      "original": "The example adds $xi v_0$ to coordinate $1$, $2 xi v_(-1)$ to coordinate $0$, and sends coordinates $-3, -2$ into $2, 3$, with unspecified signs.",
+      "corrected": "In the Zorn basis use $v_1 arrow.r v_1 + 2 xi v_0 + xi^2 v_(-1)$, $v_0 arrow.r v_0 + xi v_(-1)$, $v_(-2) arrow.r v_(-2) - xi v_3$, $v_(-3) arrow.r v_(-3) + xi v_2$. The compatible chain is $e_1, e_(-2), e_(-3), 0, e_3, e_2, e_(-1)$.",
+      "reason": "Both the coefficients and the two remaining arrow directions must agree with the corrected norm and Dickson form. Interchanging the coefficients alone still fails to preserve the trilinear form.",
+      "verified_by": "Sage verifies the norm polynomial and all 343 trilinear basis triples over Z[t], all 64 products for the integral Zorn extension, and the additive parameter law over Z[t,s]. Lean proves preservation of the complete quadratic norm over every commutative ring."
+    },
+    {
+      "id": "C105",
+      "printed_page": 288,
+      "section": "9. The structure theorems",
+      "place": "Dimension of the universal inverse-matrix counterexample",
+      "original": "The universal inverse-matrix algebra is called a counterexample with no restriction on the matrix size.",
+      "corrected": "For every $m > 1$ the stated algebra has $E(m,R)$ neither normal nor subnormal in $\"GL\"(m,R)$; the group size is the same $m$ as that of the generic matrices.",
+      "reason": "At $m = 1$ the algebra is a commutative Laurent polynomial ring. The dimension restriction and matching group size are essential.",
+      "verified_by": "Gerasimov 1989, full §10, pp. 61–62; apply the universal n-dimensional representation construction to the infinite cyclic group."
+    },
+    {
+      "id": "C106",
+      "printed_page": 289,
+      "section": "10. The proofs for Aℓ",
+      "place": "Root angle for arbitrary transvection subgroups",
+      "original": "The angle between $X_(u v)$ and $X_(w v)$ is $pi/3$ under only $v u = v w = 0$.",
+      "corrected": "The $pi/3$ interpretation applies to the elementary independent root configuration; retain the algebraic additivity identity for general columns and rows.",
+      "reason": "For general $u,w$ the two subgroups can coincide or degenerate, so their algebraic additivity does not define an angle.",
+      "verified_by": "Direct rank-one product identity and the standard roots ei−ej and ek−ej for three distinct indices."
+    },
+    {
+      "id": "C107",
+      "printed_page": 287,
+      "section": "9. The structure theorems",
+      "place": "Noncommutative ring terminology",
+      "original": "The Ore condition, localisational dimension and absolute weak finiteness are used without definitions.",
+      "corrected": "Define both classical Ore conditions using regular denominators; define the left localisational dimension by its $(n+1)$-layer filtration and all subideals in each layer, with the Ore and annihilation conditions for localization at $1+J$; define weak finiteness and its requirement for every quotient by a two-sided ideal.",
+      "reason": "The terminology fixes sidedness, denominator conditions and the quantifier over all subideals, and distinguishes weak finiteness from invariant basis number.",
+      "verified_by": "Brešar, Introduction to Noncommutative Algebra (2nd ed., 2025), Definition 7.10, Theorem 7.13 and Remark 7.16; Golubchik–Markov, Localization dimension of PI-rings (English translation, 1986), Introduction and Lemma 1.2, with PI finiteness in Theorem 3.1; Vavilov–Stepanov, Linear groups over general rings. I. Generalities (2013), §12. The latter uses completely weakly finite. These definitions do not verify Golubchik’s normal-subgroup classification theorem."
+    },
+    {
+      "id": "C108",
+      "printed_page": 319,
+      "section": "References",
+      "place": "Abe1983",
+      "original": "pages: 1271–1308.",
+      "corrected": "pages: 1271–1307.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://www.tandfonline.com/doi/abs/10.1080/00927878308822906. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C109",
+      "printed_page": 320,
+      "section": "References",
+      "place": "Bass1973b",
+      "original": "pages: 349–446.",
+      "corrected": "pages: 347–446.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/chapter/10.1007/BFb0073733. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C110",
+      "printed_page": 321,
+      "section": "References",
+      "place": "Carter1965",
+      "original": "pages: 163–240.",
+      "corrected": "pages: 193–240.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://academic.oup.com/jlms/article-abstract/s1-40/1/193/856756. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C111",
+      "printed_page": 322,
+      "section": "References",
+      "place": "Cohn1966",
+      "original": "author: Cohn, P.; pages: 365–413.",
+      "corrected": "author: Cohn, P. M.; pages: 5–53.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://www.numdam.org/item/PMIHES_1966__30__5_0/. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C112",
+      "printed_page": 322,
+      "section": "References",
+      "place": "Cooperstein1979",
+      "original": "year: 1978.",
+      "corrected": "year: 1979.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/article/10.1007/BF00151515. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C113",
+      "printed_page": 322,
+      "section": "References",
+      "place": "Cooperstein1981",
+      "original": "year: 1980.",
+      "corrected": "year: 1981.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://pubs.ams.org/ebooks/pspum/037. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C114",
+      "printed_page": 323,
+      "section": "References",
+      "place": "Dennis1988",
+      "original": "volume: 116.",
+      "corrected": "volume: 118.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://www.sciencedirect.com/science/article/pii/0021869388900555. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C115",
+      "printed_page": 325,
+      "section": "References",
+      "place": "Golubchik1986",
+      "original": "year: 1981; journal: Trudy Seminara Petrovskogo; volume: unspecified; number: 6; pages: 39–46; note: In Russian.",
+      "corrected": "year: 1986; journal: Journal of Soviet Mathematics; volume: 33; number: 3; pages: 981–987; note: English translation; Russian original: Trudy Seminara Petrovskogo 6 (1981), 39–46.",
+      "reason": "Prefer the available published English translation and retain the Russian original in the bibliographical note.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/article/10.1007/BF01085041. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C116",
+      "printed_page": 328,
+      "section": "References",
+      "place": "OMeara1978",
+      "original": "title: Lectures on symplectic groups.",
+      "corrected": "title: Symplectic Groups.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://pubs.ams.org/ebooks/surv/016. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C117",
+      "printed_page": 328,
+      "section": "References",
+      "place": "Orlik1978",
+      "original": "author: Orlik, P. and Solomon, R.",
+      "corrected": "author: Orlik, P. and Solomon, L.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/article/10.1007/BF01420243. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C118",
+      "printed_page": 329,
+      "section": "References",
+      "place": "Plotkin1989",
+      "original": "pages: 239–240.",
+      "corrected": "pages: 291–292.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://www.mathnet.ru/php/archive.phtml?issue=2&jrnid=rm&option_lang=eng&volume=44&wshow=issue&year=1989. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C119",
+      "printed_page": 329,
+      "section": "References",
+      "place": "Quillen1976",
+      "original": "pages: 167–173.",
+      "corrected": "pages: 167–171.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/article/10.1007/BF01390008. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C120",
+      "printed_page": 332,
+      "section": "References",
+      "place": "Testerman1988",
+      "original": "year: 1989.",
+      "corrected": "year: 1988.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://pubs.ams.org/ebooks/memo/0390. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C121",
+      "printed_page": 332,
+      "section": "References",
+      "place": "Testerman1989",
+      "original": "journal: Communications in Algebra; volume: 17; number: 4; pages: 1003–1016.",
+      "corrected": "journal: Journal of Algebra; volume: 122; number: 2; pages: 299–322.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://infoscience-exports.epfl.ch/4648/. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C122",
+      "printed_page": 333,
+      "section": "References",
+      "place": "Vaserstein1969a",
+      "original": "pages: 233–244.",
+      "corrected": "pages: 141–148.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/article/10.1007/BF01098314. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C123",
+      "printed_page": 333,
+      "section": "References",
+      "place": "Vaserstein1971",
+      "original": "pages: 17–27.",
+      "corrected": "pages: 102–110.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://link.springer.com/article/10.1007/BF01076414. Publisher or primary publication record read; this verifies metadata, not the mathematical contents of the article."
+    },
+    {
+      "id": "C124",
+      "printed_page": 323,
+      "section": "References",
+      "place": "Deodhar1978",
+      "original": "volume: 40; number: 5.",
+      "corrected": "volume: 81; number: 4.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://api.crossref.org/works/10.1016/1385-7258(78)90059-8. Publisher-deposited title, author, year, volume 81, issue 4 and pages 423–435; the original conflates Series A 81 with the parallel Indagationes Mathematicae 40. The publisher landing page was inaccessible."
+    },
+    {
+      "id": "C125",
+      "printed_page": 324,
+      "section": "References",
+      "place": "Freudenthal1953b",
+      "original": "title: Sur les invariantes caractéristiques des groupes semi-simples; pages: 81–89.",
+      "corrected": "title: Sur des invariants caractéristiques des groupes semi-simples; pages: 90–94.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://dspace.library.uu.nl/bitstream/handle/1874/7436/1954-freudenthal-beziehungen.pdf?sequence=1. Freudenthal’s own 1954 paper, first article page footnote 1, cites the correct French title and A56 (1953), 90–94; the publisher-deposited record agrees. The 1953 article itself was not read."
+    },
+    {
+      "id": "C126",
+      "printed_page": 327,
+      "section": "References",
+      "place": "Li1987b",
+      "original": "title: Generalized sandwich theorem; pages: 171–184; number: unspecified.",
+      "corrected": "title: A generalized sandwich theorem; pages: 171–183; number: 2.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://api.crossref.org/works/10.1007/BF00533417. Publisher-deposited title, author names, year, volume 1, issue 2, pages 171–183; also Bak, Nonabelian K-theory (1991), bibliography p. 397, reference 8. The original article and inaccessible publisher landing page were not read."
+    },
+    {
+      "id": "C127",
+      "printed_page": 328,
+      "section": "References",
+      "place": "Meyberg1968",
+      "original": "volume: 30.",
+      "corrected": "volume: 71.",
+      "reason": "Correct the bibliographical identity and publication data against verified primary bibliographical records.",
+      "verified_by": "Bibliographical metadata: https://api.crossref.org/works/10.1016/S1385-7258(68)50018-0. Publisher-deposited first-part record gives Series A 71 (1968), 162–174. Part II is independently deposited at 175–190, DOI 10.1016/S1385-7258(68)50019-2. The original conflates Series A 71 with parallel Indagationes Mathematicae 30. No article contents were checked."
+    },
+    {
+      "id": "C128",
+      "printed_page": 319,
+      "section": "References",
+      "place": "Reference 10: journal issue",
+      "original": "Tôhoku Mathematical Journal 28(1) (1976), 185–198.",
+      "corrected": "Tôhoku Mathematical Journal 28(2) (1976), 185–198.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.2748/tmj/1178240833. The title, authors, year, volume and page range identify the same article; the issue is 2. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only."
+    },
+    {
+      "id": "C129",
+      "printed_page": 320,
+      "section": "References",
+      "place": "Reference 32: journal issue",
+      "original": "Transactions of the American Mathematical Society 261(1) (1980), 417–438.",
+      "corrected": "Transactions of the American Mathematical Society 261(2) (1980), 417–438.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.1090/s0002-9947-1980-0580896-5. The title, authors, year, volume and page range identify the same article; the issue is 2. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only. The AMS article record also identifies directory 1980-261-02."
+    },
+    {
+      "id": "C130",
+      "printed_page": 321,
+      "section": "References",
+      "place": "Reference 37: journal issue",
+      "original": "Journal of Algebra 94(3) (1985), 511–545.",
+      "corrected": "Journal of Algebra 94(2) (1985), 511–545.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.1016/0021-8693(85)90197-8. The title, authors, year, volume and page range identify the same article; the issue is 2. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only."
+    },
+    {
+      "id": "C131",
+      "printed_page": 321,
+      "section": "References",
+      "place": "Reference 43: journal issue",
+      "original": "Illinois Journal of Mathematics 12(1) (1968), 190–200.",
+      "corrected": "Illinois Journal of Mathematics 12(2) (1968), 190–200.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.1215/ijm/1256054210. The title, authors, year, volume and page range identify the same article; the issue is 2. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only."
+    },
+    {
+      "id": "C132",
+      "printed_page": 322,
+      "section": "References",
+      "place": "Reference 57: journal issue",
+      "original": "Tôhoku Mathematical Journal 7(1) (1955), 14–66.",
+      "corrected": "Tôhoku Mathematical Journal 7(1–2) (1955), 14–66.",
+      "reason": "The article appeared in the combined first and second issues.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.2748/tmj/1178245104. The title, authors, year, volume and page range identify the same article; the issue is 1–2. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only."
+    },
+    {
+      "id": "C133",
+      "printed_page": 323,
+      "section": "References",
+      "place": "Reference 81: journal issue",
+      "original": "American Journal of Mathematics 79(5) (1957), 922–923.",
+      "corrected": "American Journal of Mathematics 79(4) (1957), 922–923.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.2307/2372442. The title, authors, year, volume and page range identify the same article; the issue is 4. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only."
+    },
+    {
+      "id": "C134",
+      "printed_page": 326,
+      "section": "References",
+      "place": "Reference 126: journal issue",
+      "original": "Mathematische Zeitschrift 141(2) (1975), 243–251.",
+      "corrected": "Mathematische Zeitschrift 141(3) (1975), 243–251.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.1007/bf01247310. The title, authors, year, volume and page range identify the same article; the issue is 3. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only. The Springer article record explicitly gives volume 141, issue 3."
+    },
+    {
+      "id": "C135",
+      "printed_page": 331,
+      "section": "References",
+      "place": "Reference 207: journal issue",
+      "original": "Pacific Journal of Mathematics 9(5) (1959), 875–891.",
+      "corrected": "Pacific Journal of Mathematics 9(3) (1959), 875–891.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.2140/pjm.1959.9.875. The title, authors, year, volume and page range identify the same article; the issue is 3. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only. The MSP article page explicitly gives volume 9, number 3."
+    },
+    {
+      "id": "C136",
+      "printed_page": 331,
+      "section": "References",
+      "place": "Reference 215: journal issue",
+      "original": "Journal of Algebra 57(2) (1979), 258–270.",
+      "corrected": "Journal of Algebra 57(1) (1979), 258–270.",
+      "reason": "The printed bibliography gives the wrong journal issue.",
+      "verified_by": "Publisher-deposited DOI metadata: https://api.crossref.org/works/10.1016/0021-8693(79)90223-0. The title, authors, year, volume and page range identify the same article; the issue is 1. The issue printed in the 1991 bibliography was checked. This verifies bibliographical metadata only."
+    },
+    {
+      "id": "C137",
+      "printed_page": 330,
+      "section": "References",
+      "place": "Reference 199: English edition",
+      "original": "Russian publication, 1989, pp. 5–136; English translation to appear with Springer.",
+      "corrected": "Identify the Russian VINITI volume and the published English edition: Algebraic Geometry IV, Encyclopaedia of Mathematical Sciences 55, Springer, 1994, pp. 1–121.",
+      "reason": "Replace the prospective publication notice with the actual English publication data.",
+      "verified_by": "Math-Net Russian publication record https://www.mathnet.ru/php/archive.phtml?jrnid=intf&option_lang=rus&paperid=157&wshow=paper; official English chapter record https://link.springer.com/chapter/10.1007/978-3-662-03073-8_1 and its two-page publisher preview. The official book record identifies the original Russian VINITI edition of 1989. Bibliographical metadata and preview checked; the full chapter and the language of the authors manuscript were not established by this review."
+    },
+    {
+      "id": "C138",
+      "printed_page": 324,
+      "section": "References",
+      "place": "Reference 99: publication data",
+      "original": "The Russian translation will appear in volume 73, followed by an English translation of that translation.",
+      "corrected": "Retain the 1990 preprint and give the published English book: Representations of Finite-Dimensional Algebras, Encyclopaedia of Mathematical Sciences 73, Springer, 1992, V + 177 pp.",
+      "reason": "Replace the prospective translation chain with verified publication data; the 1992 hardcover is distinct from the later softcover.",
+      "verified_by": "Primary publication records: https://link.springer.com/book/9783540537328; https://www.mathnet.ru/php/archive.phtml?jrnid=intf&option_lang=rus&paperid=188&wshow=paper. Publisher page also displays copyright1997 for later softcover; exact hardcover publication date08October1992 and ISBN identify1992 edition. Do not reproduce prospective English-after-Russian chronology: MathNet dates Russian volume2003. No DOI verified; omit rather than guess. Publication identity checked; mathematical contents not verified by this metadata review."
+    },
+    {
+      "id": "C139",
+      "printed_page": 332,
+      "section": "References",
+      "place": "Reference 228: publication data",
+      "original": "The title refers to rings of algebraic numbers; the English translation is to appear.",
+      "corrected": "Use the published title referring to rings of algebraic S-integers and identify the English translation: Mathematics of the USSR-Izvestiya 36 (1991), no. 1, 101–128.",
+      "reason": "Give the exact published English title and the completed translation data while retaining the Russian original.",
+      "verified_by": "Primary publication records: https://www.mathnet.ru/eng/im1106. The original citation uses an imprecise English rendering algebraic numbers; published title uses algebraic S-integers. DOI belongs to English translation and must remain scoped to that edition. Publication identity checked; mathematical contents not verified by this metadata review."
+    },
+    {
+      "id": "C140",
+      "printed_page": 335,
+      "section": "References",
+      "place": "Reference 274: publication data",
+      "original": "Fundamental Trends in Mathematics 50 (1989), 5–120; English translation to appear.",
+      "corrected": "Algebra IV, Itogi Nauki i Tekhniki 37 (1989), 114–228; English translation: Algebra IV, Encyclopaedia of Mathematical Sciences 37, Springer, 1993, 97–196.",
+      "reason": "Correct the volume and pages of the Russian publication and identify the completed English translation.",
+      "verified_by": "Primary publication records: https://www.mathnet.ru/php/archive.phtml?jrnid=intf&option_lang=rus&paperid=131&wshow=paper; https://link.springer.com/chapter/10.1007/978-3-662-02869-8_2; https://link.springer.com/book/10.1007/978-3-662-02869-8. The original bibliography gives volume 50 and pages 5–120. Primary MathNet and Springer identify correct1989 Russianvolume37 and English1993volume37. Correct source error and log it; retain1989edition and existingkey. Englishchapter DOI, not book DOI, recommended. Publication identity checked; mathematical contents not verified by this metadata review."
+    },
+    {
+      "id": "C141",
+      "printed_page": 334,
+      "section": "References",
+      "place": "Reference 257: publication data",
+      "original": "English translation to appear in the AMS Translation Series.",
+      "corrected": "Retain the Russian publication without the prospective translation notice.",
+      "reason": "An unconfirmed publication promise from 1991 cannot establish current availability; an exact English translation was not identified.",
+      "verified_by": "Primary bibliographical evidence: https://doi.org/10.1090/S1061-0022-08-01036-4; https://web.osu.cz/~Zusmanovich/files/vavilov/1991-subgroups.pdf. The original bibliography page 334 was read visually. The later primary AMS bibliography in Weight elements of Chevalley groups identifies the 1988 Russian article, pp. 18–39, MR 974130, without an English translation. The 1993 English maximal-torus survey likewise cites this Russian article as reference 28. Searches of the deposited DOI metadata and publisher records did not establish an exact translation. This does not prove that no translation exists."
+    },
+    {
+      "id": "C142",
+      "printed_page": 334,
+      "section": "References",
+      "place": "Reference 262: publication data",
+      "original": "Trudy Matematicheskogo Instituta Steklova 183 (1990), 29–41; English translation to appear.",
+      "corrected": "Trudy Matematicheskogo Instituta Steklova 183 (1990), 29–42; English translation: Subgroups of splittable classical groups, Proceedings of the Steklov Institute of Mathematics 183 (1991), no. 4, 27–41.",
+      "reason": "Correct the Russian final page and identify the completed English translation.",
+      "verified_by": "Primary bibliographical evidence: https://www.mathnet.ru/php/archive.phtml?jrnid=tm&option_lang=eng&paperid=1895&wshow=paper; https://doi.org/10.1090/S1061-0022-08-01036-4. The original bibliography page 334 was read visually. The MathNet primary article record explicitly pairs Russian 183 (1990), 29–42 with English 183 (1991), 27–41; its AMSBIB translation block was read. The primary AMS bibliography of Weight elements of Chevalley groups supplies English publication 1991, no. 4, 27–41 and also confirms original pp. 29–42. Article mathematical contents and the English PDF were not read for this metadata check. No exact DOI was verified."
+    },
+    {
+      "id": "C143",
+      "printed_page": 334,
+      "section": "References",
+      "place": "Reference 263: publication data",
+      "original": "English translation to appear in Proceedings of the Leningrad Mathematical Society.",
+      "corrected": "English translation: American Mathematical Society Translations, Series 2, 155 (1993), 59–100.",
+      "reason": "Replace the prospective publication notice with the actual translation data and its scoped DOI.",
+      "verified_by": "Primary bibliographical evidence: https://api.crossref.org/works/10.1090/trans2/155/04; https://doi.org/10.1090/trans2/155/04; https://web.osu.cz/~Zusmanovich/files/vavilov/1991-subgroups.pdf. The original bibliography page 334 was read visually. The actual English PDF's indexed first-page text identifies AMS Translations (2), volume 155, 1993, article title, author and first page 59. The AMS-deposited DOI record was read directly and gives English language, 1993 publication, article pp. 59–100, author and collection title. The article contents were not independently verified in this bibliographical check; the PDF download was unavailable locally."
+    }
+  ]
+}

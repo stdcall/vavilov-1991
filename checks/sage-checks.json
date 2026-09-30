@@ -1,0 +1,128 @@
+[
+  {
+    "file": "checks/sage/classical_diagrams.py",
+    "passages": [
+      "ss:type-a",
+      "ss:type-b",
+      "ss:type-c",
+      "ss:type-d",
+      "ss:type-g2"
+    ],
+    "coverage": "Checks the actual diagram vertices and complete labelled simple-root edge sets against independent Sage root data: 20 compressed A/B/C/D diagrams at ranks 8–12 (185 visible vertices, 135 edges), and the seven-vertex G2 chain.",
+    "limitations": "Verifies these finite diagram instances and their visible induced edges, not every rank or a group-scheme identification."
+  },
+  {
+    "file": "checks/sage/classical_forms.py",
+    "passages": [
+      "ss:type-b",
+      "ss:type-c",
+      "ss:type-d"
+    ],
+    "coverage": "Exact polynomial determinant, Gram-preservation and inverse-entry checks for the displayed classical root matrices at ranks 2–5; rejects the incorrect printed odd-orthogonal and symplectic parameters.",
+    "limitations": "Finite matrix instances; does not prove the full orthogonal or symplectic group-scheme descriptions."
+  },
+  {
+    "file": "checks/sage/e6_norm_model.py",
+    "passages": [
+      "ss:e6-weight-cubic",
+      "th:e6-cubic-isometry"
+    ],
+    "coverage": "Checks a signed permutation with determinant one identifying the actual 45-term weight-basis cubic with det(A)+det(B)+det(C)−tr(ABC), Conrad's formula (6.6). The complete polynomial identity is verified over Z, so the change of basis remains invertible and the equality holds after every commutative base change.",
+    "limitations": "The integral isometry transfers the stabilizer problem between the two models; the identification of the norm stabilizer with the simply connected E6 group scheme remains the explicitly cited external Theorem C.2 of Conrad."
+  },
+  {
+    "file": "checks/sage/e6_representation.py",
+    "passages": [
+      "ss:e6-cubic",
+      "eq:e6-singular-roots",
+      "eq:e6-five-root-product",
+      "eq:e6-white-cancellations",
+      "eq:freudenthal-transvection"
+    ],
+    "coverage": "Checks the integral 27-dimensional generators, all 30 mixed commutators with distinct simple-root indices, Serre relations, 72 root actions preserving the cubic, its one-dimensional invariant kernel over Q, and the five-root stabiliser product and generated diagram data. The Freudenthal formula with opposite column/dual cross-product signs is checked on all 702 ordered distinct basis pairs: 432 exact root operators and 270 zero cancellations, including the complete simple-root matrix.",
+    "limitations": "Generator relations and polynomial identities; does not prove a group-scheme isomorphism, elementary membership, or normality. The basis-pair verification does not prove the general transvection assertion for arbitrary white vectors."
+  },
+  {
+    "file": "checks/sage/e7_invariant.py",
+    "passages": [
+      "ss:type-e7"
+    ],
+    "coverage": "Checks the 56 weights against an independent Sage omega7 Weyl orbit, all 126 root operators, the simple Cartan and Serre relations and all 42 mixed simple-generator relations. Each root operator has 12 nonzero entries, rank 12 and square zero. Full polynomial substitutions in all 56 variables preserve the alternating pairing and the printed Pfaffian/trace quartic; the invariant coefficient kernel is exactly (1,1,−1/4,1/16).",
+    "limitations": "Exact characteristic-zero polynomial and representation identities. These checks do not classify the full stabilizer group scheme or establish the integral four-linear construction in small characteristics."
+  },
+  {
+    "file": "checks/sage/elementary_identities.py",
+    "passages": [
+      "ss:groups-versus-elementary",
+      "ss:equations-columns"
+    ],
+    "coverage": "Checks the corrected C2 linear parameter identity over Z[q], rejects the printed quadratic parameter, and checks the reversed column-row pairing and symplectic matrix preservation at ranks 2–8.",
+    "limitations": "Verifies the explicit identities and these finite ranks; no general normality theorem."
+  },
+  {
+    "file": "checks/sage/exceptional_weights.py",
+    "passages": [
+      "ss:weight-diagrams",
+      "ss:e6-module",
+      "ss:e6-weight-cubic",
+      "ss:type-f4",
+      "ss:type-e7",
+      "ss:type-e8",
+      "fig:e6-weight-coordinates",
+      "fig:e6-five-root-actions",
+      "fig:e6-stabiliser-coordinates"
+    ],
+    "coverage": "Checks complete independently generated exceptional weight/root sets and labelled edges, E6 coloured and partitioned variants and column/action labels, the Schläfli incidence graph and 45 cubic triples, cubic polarisation, F4 multiplicities, all 240 E8 root contributions to the Killing trace, and the determinant-one normalised 248-dimensional pairing.",
+    "limitations": "Checks the implemented diagram variants and algebraic invariants; omitted adjoint Cartan-action arrows are outside the depicted fragments. Scalar-obstruction checks do not classify invariant stabilisers or prove group-scheme identifications."
+  },
+  {
+    "file": "checks/sage/g2_forms.py",
+    "passages": [
+      "ss:type-g2",
+      "eq:g2-short-root-action"
+    ],
+    "coverage": "Checks split Zorn norm composition as an integral polynomial identity, all 343 basis triples of the Dickson alternating form, trace/polarisation compatibility, and the rational Lie dimensions 14 and 8 distinguishing the corrected and printed quadratic forms. The complete signed short-root operator preserves the quadratic norm and all 343 tensor triples over Z[t]; its integral octonion extension preserves all 64 basis products and the unit. Both operators have the additive parameter law over Z[t,s], and their weights agree with the diagram's Zorn-basis order.",
+    "limitations": "The rational tangent-space calculation diagnoses the error; it does not prove the cited automorphism-group scheme theorem over arbitrary rings."
+  },
+  {
+    "file": "checks/sage/orthogonal_transvections.py",
+    "passages": [
+      "ss:esd-transvections",
+      "eq:orthogonal-three-space"
+    ],
+    "coverage": "Checks the ESD product matrix, determinant and Gram preservation over Q[eta,zeta,theta], and an explicit specialisation refuting the original three-factor identity.",
+    "limitations": "Polynomial matrix calculation in the stated rational model; the corrected integral identity is checked separately by stabiliser_identities.py."
+  },
+  {
+    "file": "checks/sage/stabiliser_identities.py",
+    "passages": [
+      "eq:orthogonal-three-space",
+      "eq:symplectic-long-product",
+      "eq:symplectic-short-product",
+      "eq:symplectic-minor-syzygy",
+      "eq:symplectic-short-factorisation"
+    ],
+    "coverage": "Checks the displayed orthogonal three-space and symplectic long/short products, determinant and Gram identities, fixed columns, both signed-minor syzygies, and the short-product factorisation as exact identities over an integer polynomial ring.",
+    "limitations": "These identities do not establish parabolic reduction, elementary-subgroup membership, or normality."
+  },
+  {
+    "file": "checks/sage/weight_diagrams.py",
+    "passages": [
+      "ss:weight-diagrams",
+      "ss:e6-module",
+      "ss:e6-jordan"
+    ],
+    "coverage": "Checks the stored E6 27-weight diagram and all 36 labelled simple-root edges against an independently generated Sage Weyl orbit, six endpoint pairs for each of all 72 roots, and eight paths but six pairs in the displayed example. The Jordan restriction has three scalar and three octonion components; each scalar couples to its named opposite octonion component in exactly four cubic pairs.",
+    "limitations": "These finite root and component data do not construct the group scheme or prescribe all matrix signs; other specialised variants are covered by exceptional_weights.py."
+  },
+  {
+    "file": "checks/sage/whitehead.py",
+    "passages": [
+      "eq:whitehead-vaserstein-block",
+      "eq:whitehead-four-factorisation",
+      "eq:whitehead-relative-factorisation"
+    ],
+    "coverage": "Checks the rectangular Jacobson inverse identities and four- and five-factor block products for generic 2-by-3 and 3-by-2 matrices; exhibits the determinant obstruction caused by the missing inverse in the original formula.",
+    "limitations": "Generic calculation over a commutative rational function field; does not itself prove arbitrary noncommutative-ring or relative elementary-subgroup assertions."
+  }
+]
