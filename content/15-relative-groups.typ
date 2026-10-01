@@ -72,7 +72,7 @@ generation applies, it is enough to check long root unipotents.
 
 Let again $I$ be an ideal in $R$. Then $I$ defines the corresponding
 _reduction homomorphism_
-$ phi_I:G(Phi,R) -> G(Phi,R/I), $
+$ phi_I:G(Phi,R) -> G(Phi,quotient(R, I)), $
 see #citation[@bib:Abe1969, @bib:Stein1971a, @bib:Stein1971b]. If we look at the
 group $G=G(Phi,R)$ in a particular representation $pi$ then $phi_I$ is very easy
 to describe: one has just to reduce every entry of a matrix representing an
@@ -82,16 +82,17 @@ $phi_I$ is denoted by $G_I=G(Phi,R,I)$ and is called the _principal congruence
 subgroup of level_ $I$. By the definition $G_I$ is a normal subgroup of $G$ and
 one has the following exact sequence:
 $ 1 -> G(Phi,R,I) -> G(Phi,R) -> Im(phi_I) -> 1. $
-Reduction need not be surjective onto all of $G(Phi,R/I)$.
+Reduction need not be surjective onto all of $G(Phi,quotient(R, I))$.
 
-Similarly the inverse image under $phi_I$ of the centre of $G(Phi,R/I)$ is
-denoted by $C_I=C(Phi,R,I)$ (sometimes by $G'_I=G'(Phi,R,I)$) and is called the
-_full congruence subgroup of level_ $I$. To stress that $G(Phi,R,I)$ and
-$C(Phi,R,I)$ are considered in a particular representation we write
-$G_pi (Phi, R, I)$ and $C_pi (Phi, R, I)$ respectively. For a fixed group scheme
-the principal subgroup is the kernel of its reduction map; passing to the image
-in a representation with a central kernel can change that kernel. The full
-congruence subgroup also depends on the chosen form of the group and its centre.
+Similarly the inverse image under $phi_I$ of the centre of
+$G(Phi,quotient(R, I))$ is denoted by $C_I=C(Phi,R,I)$ (sometimes by
+$G'_I=G'(Phi,R,I)$) and is called the _full congruence subgroup of level_ $I$.
+To stress that $G(Phi,R,I)$ and $C(Phi,R,I)$ are considered in a particular
+representation we write $G_pi (Phi, R, I)$ and $C_pi (Phi, R, I)$ respectively.
+For a fixed group scheme the principal subgroup is the kernel of its reduction
+map; passing to the image in a representation with a central kernel can change
+that kernel. The full congruence subgroup also depends on the chosen form of the
+group and its centre.
 
 Clearly one has $E_I ≤ G_I ≤ C_I$. In §@sec:structure-theorems we discuss the
 _standard description of the normal subgroups_ in $G$ which says that (with some
@@ -104,10 +105,10 @@ congruence subgroups #citation[@bib:Abe1969, @bib:Abe1976, @bib:Abe1989a,
   @bib:Abe1989b] but we cannot reproduce their definition here.
 
 When the standard description holds the classification of normal subgroups in
-$G$ is reduced to the computation of factor-groups $C_I/E_I$ or, since the
-structure of $C_I/G_I$ is clear, to the computation of the
+$G$ is reduced to the computation of factor-groups $quotient(C_I, E_I)$ or,
+since the structure of $quotient(C_I, G_I)$ is clear, to the computation of the
 _relative $K_1$-functors_
-$ K_1(Phi,R,I)=G(Phi,R,I)/E(Phi,R,I). $
+$ K_1(Phi,R,I)=quotient(G(Phi,R,I), E(Phi,R,I)). $
 Of course this last problem is highly non-trivial and was solved only for some
 very special classes of rings.
 

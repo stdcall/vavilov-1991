@@ -1116,6 +1116,11 @@ EXPRESSION = '''(
   headings: query(heading).map(it => (
     label: it.at("label", default: none), level: it.level,
     numbered: it.numbering != none, body: it.body,
+    bookmarked: if it.bookmarked == auto { it.outlined } else { it.bookmarked },
+    prefix: if it.numbering == none { "" } else {
+      import "/content/numbering.typ": heading-prefix
+      heading-prefix(..counter(heading).at(it.location()))
+    },
     position: it.location().position())),
   equations: query(math.equation).filter(it => it.block or it.has("label"))
     .map(it => (label: it.at("label", default: none), block: it.block,

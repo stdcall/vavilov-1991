@@ -284,8 +284,8 @@
       "printed_page": 246,
       "section": "5. Relative groups and unipotents",
       "place": "Congruence reduction sequence",
-      "original": "The reduction sequence ends with all of $G(Phi,R/I)$ as though reduction were always onto.",
-      "corrected": "End the exact sequence at the image of reduction and explicitly distinguish it from $G(Phi,R/I)$.",
+      "original": "The reduction sequence ends with all of $G(Phi,quotient(R,I))$ as though reduction were always onto.",
+      "corrected": "End the exact sequence at the image of reduction and explicitly distinguish it from $G(Phi,quotient(R,I))$.",
       "reason": "Lifting all quotient-ring points is not automatic.",
       "verified_by": "First isomorphism theorem for groups; no surjectivity hypothesis is inserted.",
       "id": "C024"
@@ -355,7 +355,7 @@
       "section": "6. The classical cases",
       "place": "The unstable special-linear quotient",
       "original": "The quotient is written as a group also in rank one.",
-      "corrected": "For $ell≥2$ use $SL(ell+1,R)/E(ell+1,R)$ as a quotient group; in rank one it can only be a coset space.",
+      "corrected": "For $ell≥2$ use $quotient(SL(ell+1,R),E(ell+1,R))$ as a quotient group; in rank one it can only be a coset space.",
       "reason": "$E(2,R)$ need not be normal.",
       "verified_by": "Rank-one nonnormality examples and the normality theorem for degree at least three.",
       "id": "C031"
@@ -415,7 +415,7 @@
       "printed_page": 255,
       "section": "6. The classical cases",
       "place": "Symplectic K₁ quotient",
-      "original": "The expression $K_1(C_ell,R)=KSp_1(2ell,R)=Sp(2ell,R)/Ep(2ell,R)$ is given without an explicit rank restriction.",
+      "original": "The expression $K_1(C_ell,R)=KSp_1(2ell,R)=quotient(Sp(2ell,R),Ep(2ell,R))$ is given without an explicit rank restriction.",
       "corrected": "State the quotient-group identification for $ell≥2$.",
       "reason": "The quotient as a group uses elementary normality. Rank one is excluded from the uniform normality theorem and cannot be covered by this unqualified assertion over arbitrary rings.",
       "verified_by": "Printed page 255 was inspected directly. The rank restriction follows from the stated Suslin–Taddei normality theorem; no new assertion about all rank-one symplectic groups is made."
@@ -646,7 +646,7 @@
       "section": "9. The structure theorems",
       "place": "Question about the class of noncommutative rings with standard normal structure",
       "original": "The exact class of rings with standard commutator formulae and standard normal structure is left undetermined.",
-      "corrected": "Add that, for $n≥3$ and a two-sided ideal $J$ contained in the Jacobson radical, standard normal structure of $GL(n,R)$ is equivalent to that of $GL(n,R/J)$.",
+      "corrected": "Add that, for $n≥3$ and a two-sided ideal $J$ contained in the Jacobson radical, standard normal structure of $GL(n,R)$ is equivalent to that of $GL(n,quotient(R,J))$.",
       "reason": "Retrospective addition: the theorem reduces the question to a semiprimitive quotient. It neither characterises all such rings nor settles the separate conjecture concerning normal subgroups inside the elementary group.",
       "verified_by": "Stepanov, On the normal structure of the general linear group over a ring (1999), Theorem 4.6 and Corollary 4.7, full author text p. 9. The separate erratum to Proposition 1.9 was read; the authors state that its false converse is not used in the article."
     },

@@ -67,7 +67,9 @@ class PdfNavigationTests(unittest.TestCase):
             node[NameObject('/Dest')] = node['/A']['/D']
             del node['/A']
             self.assertEqual(normalize_outline_destinations(
-                writer, original, left=0), 2)
+                writer, original, left=0, headings=[
+                    {"level": 1, "prefix": "Chapter 1.", "bookmarked": True},
+                    {"level": 2, "prefix": "§ 6.", "bookmarked": True}]), 2)
             writer.write(output)
             reader = PdfReader(output)
             self.assertEqual(len(reader.pages), 2)
@@ -78,6 +80,8 @@ class PdfNavigationTests(unittest.TestCase):
                                  after.get_contents().get_data())
                 self.assertEqual(before.extract_text(), after.extract_text())
             top = reader.trailer['/Root']['/Outlines']['/First'].get_object()
+            self.assertEqual(top['/Title'], 'Chapter 1. Chapter')
+            self.assertEqual(top['/First'].get_object()['/Title'], '§ 6. Section')
             for index, (node, expected_top) in enumerate([
                     (top, 360), (top['/First'].get_object(), 430)]):
                 dest = node.get('/Dest', node.get('/A', {}).get('/D'))

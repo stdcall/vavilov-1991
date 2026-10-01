@@ -48,6 +48,7 @@
 }
 #let citation(body) = [\[#body\]]
 #let diagram(body) = box(body)
+#let quotient = math.frac.with(style: "horizontal")
 #let editorial-notes = sys.inputs.at("editorial-notes", default: "on") != "off"
 #let editorial-note-counter = counter("editorial-note")
 #let ed-note(body) = if editorial-notes {

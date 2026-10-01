@@ -1,4 +1,5 @@
 #import "@preview/cetz:0.5.2": canvas, draw
+#import "../main-defs.typ": quotient
 
 #let square(nodes, labels, x-gap: 3, y-gap: 1.3) = canvas({
   import draw: *
@@ -27,13 +28,18 @@
 })
 
 #let double-square() = square(
-  ($R times_I R$, $R$, $R$, $R/I$),
+  ($R times_I R$, $R$, $R$, $quotient(R, I)$),
   ($pi_1$, $pi_2$, $pi$, $pi$),
   x-gap: 2.5,
 )
 
 #let relative-square() = square(
-  ($E(Phi,D)$, $E(Phi,R)$, $E(Phi,R)$, $E(Phi,R/I)$),
+  (
+    $E(Phi,D)$,
+    $E(Phi,R)$,
+    $E(Phi,R)$,
+    $E(Phi,quotient(R, I))$,
+  ),
   ($pi_1$, $pi_2$, $pi$, $pi$),
   x-gap: 3.8,
 )

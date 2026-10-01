@@ -194,16 +194,29 @@ def unicode_outline_title(title):
     return re.sub(r'\b([A-G])([0-9]+|l|ℓ)\b', root_type, title)
 
 
-def normalize_outline_destinations(writer, original, *, left=None):
+def normalize_outline_destinations(writer, original, *, left=None, headings=None):
     """Keep heading heights and zoom; format mathematics in bookmark titles."""
     count = 0
+    expected = ([h for h in headings if h.get('bookmarked', True)]
+                if headings is not None else None)
 
-    def walk(ref):
+    def walk(ref, depth=1):
         nonlocal count
         while ref:
             node = ref.get_object()
+            title = str(node['/Title']).strip()
+            if expected is not None:
+                if count >= len(expected):
+                    raise ValueError('More bookmarks than evaluated headings')
+                heading = expected[count]
+                if int(heading['level']) != depth:
+                    raise ValueError('Bookmark hierarchy differs from headings')
+                prefix = heading['prefix']
+                if not isinstance(prefix, str):
+                    raise ValueError('Heading prefix is not evaluated text')
+                title = (prefix + ' ' + title) if prefix else title
             node[NameObject('/Title')] = TextStringObject(
-                unicode_outline_title(str(node['/Title'])))
+                unicode_outline_title(title))
             holder, key = node, '/Dest'
             if '/A' in node:
                 holder = node['/A'].get_object()
@@ -218,16 +231,22 @@ def normalize_outline_destinations(writer, original, *, left=None):
             if not isinstance(dest, (list, ArrayObject)) or len(dest) != 5 \
                     or dest[1] != '/XYZ':
                 raise ValueError(f'Unexpected destination: {dest}')
+            if expected is not None and 'position' in heading:
+                page = original.pages[int(heading['position']['page']) - 1]
+                if dest[0].idnum != page.indirect_reference.idnum:
+                    raise ValueError('Bookmark page differs from evaluated heading')
             x = NullObject() if left is None else FloatObject(left)
             holder[NameObject(key)] = ArrayObject([
                 dest[0], NameObject('/XYZ'), x, dest[3], NullObject()])
             count += 1
             if node.get('/First'):
-                walk(node['/First'])
+                walk(node['/First'], depth + 1)
             ref = node.get('/Next')
 
     if '/Outlines' in writer.root_object:
         walk(writer.root_object['/Outlines'].get('/First'))
+    if expected is not None and count != len(expected):
+        raise ValueError('Fewer bookmarks than evaluated headings')
     return count
 
 
@@ -289,7 +308,10 @@ def normalize_outlines(raw, output, *, label, book=True, references=(),
         assert strip_hidden_bibliography_links(writer, document_metadata) == cleanup
     preserved = accessibility_signature(original)
     left = settings()['pdf_navigation']['outline_left']
-    count = normalize_outline_destinations(writer, original, left=left)
+    count = normalize_outline_destinations(
+        writer, original, left=left,
+        headings=(document_metadata['headings']
+                  if book and document_metadata else None))
     assert '/OpenAction' not in writer.root_object
     tmp = Path(output).with_suffix('.tmp.pdf')
     writer.write(tmp)
