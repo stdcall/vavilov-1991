@@ -1,8 +1,9 @@
 # Structure of Chevalley Groups over Commutative Rings
 
-N. A. Vavilov's survey appeared in *Algebraic K-Theory and its Applications*
-(World Scientific, 1991), pp. 219–335. It develops explicit calculations in
-minimal representations, elementary subgroups, normal structure, and
+N. A. Vavilov's survey appeared in
+[*Nonassociative Algebras and Related Topics*](https://doi.org/10.1142/1403)
+(Hiroshima, 1990; World Scientific, 1991), pp. 219–335. It develops explicit
+calculations in minimal representations, elementary subgroups, normal structure, and
 localisation methods for Chevalley groups over rings.
 
 This independent revised edition has new pagination, reconstructed vector
