@@ -29,5 +29,5 @@
     World Scientific, 1991, pp. 219–335 · #link("https://doi.org/10.1142/1403")
   ]
   #v(3mm)
-  #text(size: 9pt, fill: rgb("bdc5cd"))[1991 / AI revised edition]
+  #text(size: 9pt, fill: rgb("bdc5cd"))[AI revised edition]
 ]
