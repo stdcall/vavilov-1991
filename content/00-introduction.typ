@@ -1,7 +1,7 @@
 #import "main-defs.typ": *
 #source(219)
 
-#heading(level: 2, numbering: none)[Abstract]
+#heading(level: 1, numbering: none)[Abstract] <front:abstract>
 
 This paper is a survey of the theory of Chevalley groups over commutative rings,
 centred around two topics: explicit calculations in the groups using their
@@ -10,7 +10,7 @@ subgroups, normality of the elementary subgroups etc.). We give the necessary
 background and compare several approaches to the proofs of these results,
 including some new ones.
 
-#heading(level: 2, numbering: none)[Introduction]
+#heading(level: 1, numbering: none)[Introduction] <front:introduction>
 
 The purpose of this talk is to describe two new approaches in the study of
 Chevalley groups over commutative rings.#ed-note[

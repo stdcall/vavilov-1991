@@ -35,6 +35,8 @@ Write quotient rings, groups, modules and coset spaces as `quotient(A,B)`.
 This uses a horizontal slash; ordinary arithmetic fractions keep `/`.
 
 Use ordinary headings: chapter `=`, section `==`, subsection `===`.
+Unnumbered front matter uses level 1 headings with `<front:meaning>` labels;
+its compact appearance is set centrally without changing its logical level.
 Theorems use `#theorem[...] <th:meaning>`, and unnumbered lemmas use
 `#lemma[...] <lem:meaning>`. Numbered displays have literal `<eq:meaning>`
 labels; unlabelled displays remain unnumbered. Automatic numbering is

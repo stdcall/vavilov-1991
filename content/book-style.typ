@@ -42,7 +42,11 @@
   }
   set heading(numbering: (..numbers) => context heading-prefix(..numbers))
   show heading: it => {
-    if it.level == 1 and it.numbering == none { pagebreak(weak: true) }
+    let front = it.has("label") and str(it.label).starts-with("front:")
+    let display-level = if front { 2 } else { it.level }
+    if it.level == 1 and it.numbering == none and not front {
+      pagebreak(weak: true)
+    }
     if it.numbering != none {
       restart-counters(it.level)
       [#metadata((
@@ -57,14 +61,14 @@
     block(
       width: 100%,
       sticky: true,
-      above: if it.level == 1 { 12mm } else if it.level == 2 {
+      above: if display-level == 1 { 12mm } else if display-level == 2 {
         7mm
       } else { 5mm },
-      below: if it.level == 1 { 5mm } else if it.level == 2 {
+      below: if display-level == 1 { 5mm } else if display-level == 2 {
         3.5mm
       } else { 2.5mm },
       text(
-        size: if it.level == 1 { 19pt } else if it.level == 2 {
+        size: if display-level == 1 { 19pt } else if display-level == 2 {
           14pt
         } else { 11.5pt },
         weight: "semibold",

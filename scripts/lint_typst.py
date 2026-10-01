@@ -319,7 +319,7 @@ def line_of(text, offset):
 NAME = r'(?=[a-z0-9-]*[a-z])[a-z0-9]+(?:-[a-z0-9]+)*'
 LABEL_FORMS = {prefix: NAME for prefix in (
     'ch', 'sec', 'ss', 'pr', 'th', 'lem', 'prop', 'cor', 'exc', 'hint', 'exm',
-    'eq', 'tab', 'fig', 'passage', 'formula')}
+    'eq', 'tab', 'fig', 'passage', 'formula', 'front')}
 LABEL_FORMS |= {
     # Bibliography keys: surname of the first author and year, a/b/c for
     # one author and year (Borel1956, Dynkin1952a); references.bib.
@@ -923,7 +923,7 @@ def coverage_checks(data, static_labels, final):
     reached = set()
     for name, found in sorted((data.get('labelled') or {}).items()):
         prefix = name.partition(':')[0]
-        if prefix in ('passage', 'formula'):
+        if prefix in ('passage', 'formula', 'front'):
             if found['count'] != 1:
                 add(f'<{name}> is set {found["count"]} times', label=name)
             continue
