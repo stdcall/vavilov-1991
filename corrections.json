@@ -981,6 +981,16 @@
       "id": "C085"
     },
     {
+      "id": "C144",
+      "printed_page": 332,
+      "section": "References",
+      "place": "Reference 236: series volume",
+      "original": "Lecture Notes in Mathematics, volume 288 (1974).",
+      "corrected": "Lecture Notes in Mathematics, volume 386 (1974).",
+      "reason": "Correct the series volume of Tits’s Buildings of Spherical Type and Finite BN-Pairs.",
+      "verified_by": "The original reference on printed p. 332 was read; Springer identifies the 1974 book as Lecture Notes in Mathematics 386, ISBN 978-3-540-06757-3."
+    },
+    {
       "printed_page": 333,
       "section": "References",
       "place": "Reference 251, journal/volume combination",
