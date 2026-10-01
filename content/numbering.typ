@@ -45,3 +45,12 @@
     )
   }
 }
+
+#let heading-prefix(..numbers) = {
+  let n = numbers.pos()
+  if n.len() == 1 { "Chapter " + str(n.first()) + "." } else if n.len() == 2 {
+    "§ " + str(section-offset(n.first()) + n.at(1)) + "."
+  } else {
+    str(section-offset(n.first()) + n.at(1)) + "." + str(n.last())
+  }
+}

@@ -31,6 +31,9 @@ Bibliographic data belong in `references.bib`, supplementary literature in
 Store verified DOI identifiers in the bibliography records. Access URLs are
 printed in full; grouped references identify each linked part explicitly.
 
+Write quotient rings, groups, modules and coset spaces as `quotient(A,B)`.
+This uses a horizontal slash; ordinary arithmetic fractions keep `/`.
+
 Use ordinary headings: chapter `=`, section `==`, subsection `===`.
 Theorems use `#theorem[...] <th:meaning>`, and unnumbered lemmas use
 `#lemma[...] <lem:meaning>`. Numbered displays have literal `<eq:meaning>`
@@ -59,3 +62,7 @@ with the printed reading, adopted text, explanation and verification.
 An adapted replacement based on a later paper carries a short editorial
 note naming that source. Mathematical checks state their hypotheses and
 coverage explicitly; Lean declarations bind to passage labels.
+
+PDF bookmark titles include the evaluated heading prefix from `numbering.typ`;
+printed headings and contents use the same numbering. Outline normalization
+preserves hierarchy, target heights and the current viewer zoom.

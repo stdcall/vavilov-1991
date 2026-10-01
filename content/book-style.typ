@@ -1,4 +1,4 @@
-#import "numbering.typ": restart-counters, section-offset
+#import "numbering.typ": heading-prefix, restart-counters
 #import "main-defs.typ": reference-rules
 #import "statements.typ": numbered-display
 
@@ -40,14 +40,7 @@
       numbered-display(it)
     } else { it }
   }
-  set heading(numbering: (..numbers) => context {
-    let n = numbers.pos()
-    if n.len() == 1 { "Chapter " + str(n.first()) + "." } else if n.len() == 2 {
-      "§ " + str(section-offset(n.first()) + n.at(1)) + "."
-    } else {
-      str(section-offset(n.first()) + n.at(1)) + "." + str(n.last())
-    }
-  })
+  set heading(numbering: (..numbers) => context heading-prefix(..numbers))
   show heading: it => {
     if it.level == 1 and it.numbering == none { pagebreak(weak: true) }
     if it.numbering != none {
