@@ -28,6 +28,8 @@ argument, name that argument explicitly. Apply these rules in editorial
 notes as well. Bibliography names are printed with initials.
 Bibliographic data belong in `references.bib`, supplementary literature in
 `editorial.bib`. Editorial notes use `#ed-note[...]` and may be disabled.
+Record a work's language in `language` (for example, `{russian}`), keeping
+translation details and other bibliographic remarks in `note`.
 Store verified DOI identifiers in the bibliography records. Access URLs are
 printed in full; grouped references identify each linked part explicitly.
 
